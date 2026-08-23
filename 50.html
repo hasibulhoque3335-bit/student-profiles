@@ -6,17 +6,15 @@
 
 <title>হাসিবুল হক — শিক্ষার্থী পরিচিতি</title>
 
-<!-- Bengali Font -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome Icons -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 
 /* =====================================================
-   RESET
+   BASIC
 ===================================================== */
 
 *{
@@ -25,37 +23,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 :root{
+    --forest:#073b2d;
+    --forest-dark:#04291f;
+    --forest-light:#0b6048;
 
-    --deep:#031f18;
-    --green:#064d39;
-    --emerald:#08765a;
-    --emerald-light:#0b9470;
-
-    --gold:#d4af37;
-    --gold-light:#f4df91;
-    --champagne:#f7e8ad;
+    --gold:#c8a84e;
+    --gold-light:#e9d58b;
 
     --cream:#fffdf8;
-    --soft:#f5f7f3;
+    --soft:#f6f7f3;
 
-    --text:#17231f;
-    --muted:#7d8883;
+    --text:#17241f;
+    --muted:#858e89;
 
-    --border:#e3e9e4;
+    --border:#e4e8e3;
 }
-
-
-/* =====================================================
-   BODY
-===================================================== */
 
 body{
 
+    margin:0;
     min-height:100vh;
 
     font-family:
@@ -64,23 +51,10 @@ body{
 
     background:
 
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(212,175,55,.15),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 90% 85%,
-            rgba(8,148,112,.20),
-            transparent 30%
-        ),
-
         linear-gradient(
             135deg,
-            #01150f,
-            #033526 45%,
-            #075d46 100%
+            #06271e,
+            #0a4937
         );
 
     display:flex;
@@ -90,7 +64,7 @@ body{
     align-items:flex-start;
 
     padding:
-        20px 10px 45px;
+        18px 10px 35px;
 
     overflow-x:hidden;
 }
@@ -104,198 +78,123 @@ body{
 
     width:100%;
 
-    max-width:440px;
+    max-width:430px;
 
     background:var(--cream);
 
-    border-radius:32px;
+    border-radius:26px;
 
     overflow:hidden;
 
     position:relative;
 
     box-shadow:
-
-        0 35px 80px rgba(0,0,0,.45),
-
-        0 0 0 1px
-        rgba(255,255,255,.12);
+        0 25px 60px rgba(0,0,0,.35);
 }
 
 
 /* =====================================================
-   PREMIUM HEADER
+   HEADER — SHORT & COMPACT
 ===================================================== */
 
 .header{
 
+    height:285px;
+
     position:relative;
-
-    min-height:430px;
-
-    padding:
-        25px 18px 145px;
 
     text-align:center;
 
-    color:white;
+    color:#fff;
 
-    overflow:visible;
+    padding:
+        22px 15px 0;
 
     background:
 
-        radial-gradient(
-            circle at 50% 110%,
-            rgba(212,175,55,.18),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(40,190,145,.18),
-            transparent 30%
-        ),
-
         linear-gradient(
-            145deg,
-            #021b14,
-            #03422f 48%,
-            #08765a 100%
+            135deg,
+            #042b20 0%,
+            #073b2d 55%,
+            #0a5140 100%
         );
+
+    overflow:visible;
 }
 
 
-/* =====================================================
-   HEADER DECORATIVE FRAME
-===================================================== */
+/* subtle light */
 
-.header-frame{
-
-    position:absolute;
-
-    inset:13px;
-
-    border:
-
-        1px solid
-        rgba(244,223,145,.22);
-
-    border-radius:25px;
-
-    pointer-events:none;
-}
-
-
-/* Inner frame */
-
-.header-frame::before{
+.header::before{
 
     content:"";
 
     position:absolute;
 
-    inset:10px;
-
-    border:
-
-        1px solid
-        rgba(244,223,145,.09);
-
-    border-radius:19px;
-}
-
-
-/* =====================================================
-   DECORATIVE ORBITS
-===================================================== */
-
-.orbit{
-
-    position:absolute;
+    width:260px;
+    height:260px;
 
     border-radius:50%;
 
+    right:-130px;
+    top:-145px;
+
     border:
-
         1px solid
-        rgba(244,223,145,.12);
-
-    pointer-events:none;
-}
-
-.orbit.one{
-
-    width:270px;
-    height:270px;
-
-    top:-150px;
-    right:-100px;
-}
-
-.orbit.two{
-
-    width:230px;
-    height:230px;
-
-    bottom:-120px;
-    left:-115px;
-}
-
-.orbit.three{
-
-    width:130px;
-    height:130px;
-
-    bottom:-60px;
-    right:-35px;
-
-    border-color:
-        rgba(8,148,112,.25);
+        rgba(233,213,139,.13);
 }
 
 
-/* =====================================================
-   GOLD CORNER DETAILS
-===================================================== */
+/* second subtle curve */
 
-.corner{
+.header::after{
+
+    content:"";
 
     position:absolute;
 
-    width:45px;
-    height:45px;
+    width:190px;
+    height:190px;
 
-    border-color:
-        rgba(244,223,145,.45);
+    border-radius:50%;
 
-    border-style:solid;
+    left:-105px;
+    bottom:-110px;
 
-    pointer-events:none;
-}
-
-.corner.top-left{
-
-    top:22px;
-    left:22px;
-
-    border-width:1px 0 0 1px;
-
-    border-radius:12px 0 0 0;
-}
-
-.corner.top-right{
-
-    top:22px;
-    right:22px;
-
-    border-width:1px 1px 0 0;
-
-    border-radius:0 12px 0 0;
+    border:
+        1px solid
+        rgba(233,213,139,.10);
 }
 
 
 /* =====================================================
-   YEAR BADGE
+   SMALL GOLD TOP LINE
+===================================================== */
+
+.top-line{
+
+    position:absolute;
+
+    left:12%;
+    right:12%;
+
+    top:11px;
+
+    height:1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(233,213,139,.55),
+            transparent
+        );
+}
+
+
+/* =====================================================
+   YEAR
 ===================================================== */
 
 .badge{
@@ -304,45 +203,25 @@ body{
 
     z-index:5;
 
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
+    display:inline-block;
 
     padding:
-        8px 17px;
+        6px 15px;
 
     border:
-
         1px solid
-        rgba(244,223,145,.55);
+        rgba(233,213,139,.5);
 
-    border-radius:50px;
+    border-radius:30px;
 
-    color:var(--champagne);
+    color:var(--gold-light);
 
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.08),
-            rgba(255,255,255,.025)
-        );
-
-    backdrop-filter:blur(10px);
-
-    box-shadow:
-
-        inset 0 0 15px
-        rgba(244,223,145,.04),
-
-        0 5px 20px
-        rgba(0,0,0,.12);
-
-    font-size:11px;
+    font-size:10.5px;
 
     font-weight:600;
+
+    background:
+        rgba(255,255,255,.035);
 }
 
 
@@ -356,16 +235,11 @@ body{
 
     z-index:5;
 
-    margin-top:18px;
+    margin-top:13px;
 
-    font-size:20px;
+    font-size:18px;
 
     font-weight:800;
-
-    letter-spacing:.2px;
-
-    text-shadow:
-        0 2px 15px rgba(0,0,0,.3);
 }
 
 
@@ -375,18 +249,16 @@ body{
 
     z-index:5;
 
-    margin-top:5px;
+    margin-top:3px;
 
-    font-size:11px;
+    font-size:10.5px;
 
-    color:#d9e8e2;
-
-    letter-spacing:.2px;
+    color:#d7e3de;
 }
 
 
 /* =====================================================
-   PROFILE PHOTO AREA
+   PHOTO
 ===================================================== */
 
 .photo-area{
@@ -395,72 +267,43 @@ body{
 
     left:50%;
 
-    bottom:-91px;
+    bottom:-64px;
 
     transform:translateX(-50%);
 
-    z-index:30;
+    z-index:20;
 }
 
 
-/* Outer glow */
+/*
+   Only TWO rings.
+   Clean and premium.
+*/
 
-.photo-glow{
+.photo-frame{
 
-    position:absolute;
+    width:138px;
+    height:138px;
 
-    inset:-14px;
+    padding:5px;
 
     border-radius:50%;
 
     background:
 
-        radial-gradient(
-            circle,
-            rgba(212,175,55,.25),
-            transparent 68%
-        );
-
-    filter:blur(5px);
-
-    z-index:-2;
-}
-
-
-/* Outer ring */
-
-.photo-outer{
-
-    width:184px;
-    height:184px;
-
-    padding:7px;
-
-    border-radius:50%;
-
-    background:
-
-        conic-gradient(
-            from 20deg,
-            #8e6b15,
-            #f7e8ad,
-            #d4af37,
-            #fff1b5,
-            #9a761e,
-            #d4af37
+        linear-gradient(
+            135deg,
+            #f1dda0,
+            #c8a84e,
+            #96751d
         );
 
     box-shadow:
 
-        0 20px 45px
-        rgba(0,0,0,.38),
-
-        0 0 0 8px
-        rgba(255,255,255,.035);
+        0 12px 30px
+        rgba(0,0,0,.30);
 }
 
-
-/* Dark inner ring */
 
 .photo-inner{
 
@@ -469,18 +312,11 @@ body{
 
     border-radius:50%;
 
-    padding:6px;
+    padding:4px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #092c22,
-            #064d39
-        );
+    background:var(--forest);
 }
 
-
-/* Image */
 
 .photo{
 
@@ -494,60 +330,53 @@ body{
     display:block;
 
     border:
-
-        3px solid
-        #f7f0d4;
-
-    background:#ddd;
+        2px solid
+        #fffdf5;
 }
 
 
 /* =====================================================
-   IDENTITY SECTION
+   IDENTITY
 ===================================================== */
 
 .identity{
 
     position:relative;
 
-    z-index:10;
-
     text-align:center;
 
-    background:var(--cream);
-
     padding:
-        112px 20px 24px;
+        82px 18px 21px;
+
+    background:var(--cream);
 }
 
 
 .name{
 
-    color:var(--deep);
+    color:var(--forest);
 
-    font-size:29px;
-
-    font-weight:800;
+    font-size:27px;
 
     line-height:1.3;
 
-    letter-spacing:-.5px;
+    font-weight:800;
 }
 
 
 .father{
 
-    margin-top:6px;
+    margin-top:5px;
 
     color:var(--muted);
 
-    font-size:14px;
+    font-size:13.5px;
 }
 
 
-.student-tag{
+/* student badge */
 
-    margin-top:14px;
+.student-tag{
 
     display:inline-flex;
 
@@ -555,42 +384,42 @@ body{
 
     gap:7px;
 
+    margin-top:11px;
+
     padding:
-        7px 16px;
+        6px 14px;
 
-    border-radius:50px;
+    border-radius:30px;
 
-    background:
+    color:var(--forest);
 
-        linear-gradient(
-            135deg,
-            #edf8f4,
-            #f5f8ef
-        );
+    background:#eef6f2;
 
     border:
         1px solid #dcebe4;
 
-    color:var(--green);
-
     font-size:11px;
 
     font-weight:700;
+}
 
-    box-shadow:
-        0 5px 15px
-        rgba(4,77,57,.06);
+
+.student-tag i{
+
+    color:var(--gold);
+
+    font-size:13px;
 }
 
 
 /* =====================================================
-   INFORMATION SECTION
+   SECTION TITLE
 ===================================================== */
 
 .info-section{
 
     padding:
-        6px 18px 22px;
+        3px 18px 20px;
 }
 
 
@@ -600,51 +429,43 @@ body{
 
     align-items:center;
 
-    gap:10px;
+    gap:9px;
 
     margin:
-        5px 2px 14px;
+        2px 2px 12px;
 
-    color:var(--green);
+    color:var(--forest);
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:800;
 }
 
 
-.section-title-icon{
+.section-icon{
 
-    width:32px;
-    height:32px;
+    width:30px;
+    height:30px;
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    border-radius:10px;
+    align-items:center;
+
+    border-radius:9px;
 
     color:var(--gold);
 
-    background:
-
-        linear-gradient(
-            135deg,
-            #eef8f4,
-            #e5f1ec
-        );
+    background:#eef6f2;
 
     border:
         1px solid #dcebe4;
-
-    font-size:14px;
 }
 
 
 /* =====================================================
-   INFORMATION GRID
+   INFORMATION
 ===================================================== */
 
 .info-grid{
@@ -654,62 +475,45 @@ body{
     grid-template-columns:
         1fr 1fr;
 
-    gap:11px;
+    gap:9px;
 }
 
 
 .info-box{
 
-    min-height:82px;
+    min-height:76px;
 
-    padding:14px;
+    padding:
+        12px 13px;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    border-radius:18px;
+    border-radius:16px;
 
     background:
-
         linear-gradient(
             145deg,
             #fafbf9,
-            #f4f6f2
+            #f5f6f3
         );
 
     border:
         1px solid
         var(--border);
 
-    box-shadow:
-        0 4px 12px
-        rgba(0,0,0,.025);
+    display:flex;
 
-    transition:
-        .25s ease;
-}
+    flex-direction:column;
 
-
-.info-box:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 12px 25px
-        rgba(0,0,0,.08);
+    justify-content:center;
 }
 
 
 .info-label{
 
-    color:#929b97;
+    color:#929a96;
 
-    font-size:10px;
+    font-size:9.5px;
 
-    margin-bottom:6px;
+    margin-bottom:5px;
 }
 
 
@@ -717,33 +521,25 @@ body{
 
     color:var(--text);
 
-    font-size:14px;
+    font-size:13.5px;
 
     font-weight:700;
 
-    line-height:1.5;
-
-    word-break:break-word;
+    line-height:1.45;
 
     overflow-wrap:anywhere;
+
+    word-break:break-word;
 }
 
 
-/* =====================================================
-   BLOOD GROUP
-===================================================== */
+/* blood */
 
 .blood-box{
 
-    background:
+    background:#fff8f8;
 
-        linear-gradient(
-            145deg,
-            #fff8f8,
-            #fffafa
-        );
-
-    border-color:#f0dcdc;
+    border-color:#efdada;
 }
 
 
@@ -755,54 +551,44 @@ body{
 
     justify-content:center;
 
-    min-width:48px;
+    min-width:46px;
 
     padding:
-        5px 13px;
+        4px 12px;
 
-    border-radius:50px;
+    border-radius:30px;
 
-    background:
+    background:#b51e29;
 
-        linear-gradient(
-            135deg,
-            #bd1e2d,
-            #981522
-        );
-
-    color:white;
+    color:#fff;
 
     font-size:13px;
 
     font-weight:800;
-
-    box-shadow:
-        0 5px 12px
-        rgba(180,25,35,.20);
 }
 
 
 /* =====================================================
-   CONTACT SECTION
+   CONTACT
 ===================================================== */
 
 .contact{
 
     padding:
-        2px 18px 24px;
+        2px 18px 22px;
 }
 
 
 .contact-title{
 
-    color:var(--green);
+    color:var(--forest);
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:800;
 
     margin:
-        3px 2px 13px;
+        2px 2px 11px;
 }
 
 
@@ -813,13 +599,13 @@ body{
     grid-template-columns:
         1fr 1fr;
 
-    gap:10px;
+    gap:9px;
 }
 
 
 .btn{
 
-    min-height:48px;
+    min-height:45px;
 
     display:flex;
 
@@ -827,79 +613,56 @@ body{
 
     justify-content:center;
 
-    gap:8px;
+    gap:7px;
 
-    padding:8px;
-
-    border-radius:15px;
+    border-radius:13px;
 
     text-decoration:none;
 
-    color:white;
+    color:#fff;
 
-    font-size:12px;
+    font-size:11.5px;
 
     font-weight:700;
 
     box-shadow:
-        0 7px 17px
+        0 5px 12px
         rgba(0,0,0,.09);
 
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        filter .2s ease;
+    transition:.2s;
 }
 
 
 .btn:hover{
 
-    transform:translateY(-3px);
-
-    filter:brightness(1.05);
-
-    box-shadow:
-        0 12px 25px
-        rgba(0,0,0,.15);
-}
-
-
-.btn:active{
-
-    transform:scale(.97);
+    transform:translateY(-2px);
 }
 
 
 .btn i{
 
-    font-size:16px;
+    font-size:15px;
 }
 
 
-/* =====================================================
-   CALL
-===================================================== */
+/* Call */
 
 .call{
 
     background:
-
         linear-gradient(
             135deg,
-            #063f2f,
-            #087056
+            #073b2d,
+            #0a6048
         );
 }
 
 
-/* =====================================================
-   FACEBOOK
-===================================================== */
+/* Facebook */
 
 .facebook{
 
     background:
-
         linear-gradient(
             135deg,
             #1877f2,
@@ -908,30 +671,24 @@ body{
 }
 
 
-/* =====================================================
-   WHATSAPP
-===================================================== */
+/* WhatsApp */
 
 .whatsapp{
 
     background:
-
         linear-gradient(
             135deg,
-            #20c968,
-            #16a957
+            #20c967,
+            #15a957
         );
 }
 
 
-/* =====================================================
-   GMAIL
-===================================================== */
+/* Gmail */
 
 .gmail{
 
     background:
-
         linear-gradient(
             135deg,
             #ea4335,
@@ -940,14 +697,11 @@ body{
 }
 
 
-/* =====================================================
-   TELEGRAM
-===================================================== */
+/* Telegram */
 
 .telegram{
 
     background:
-
         linear-gradient(
             135deg,
             #229ed9,
@@ -956,14 +710,11 @@ body{
 }
 
 
-/* =====================================================
-   INSTAGRAM
-===================================================== */
+/* Instagram */
 
 .instagram{
 
     background:
-
         linear-gradient(
             135deg,
             #833ab4,
@@ -979,25 +730,24 @@ body{
 
 .footer{
 
+    border-top:
+        1px solid
+        #eceeea;
+
     padding:
-        16px 15px 20px;
+        14px 12px 17px;
 
     text-align:center;
 
-    color:#9aa39e;
+    color:#9ba39f;
 
-    font-size:10px;
-
-    border-top:
-        1px solid #eceeea;
-
-    background:#fffdf8;
+    font-size:9.5px;
 }
 
 
 .footer strong{
 
-    color:var(--green);
+    color:var(--forest);
 
     font-weight:800;
 }
@@ -1012,53 +762,73 @@ body{
     body{
 
         padding:
-            10px 7px 30px;
+            10px 7px 25px;
     }
 
 
     .profile-card{
 
-        border-radius:27px;
+        border-radius:23px;
     }
 
 
     .header{
 
-        min-height:400px;
-
-        padding:
-            22px 15px 130px;
+        height:270px;
     }
 
 
-    .header-title{
+    .photo-frame{
 
-        font-size:18px;
-    }
-
-
-    .photo-outer{
-
-        width:165px;
-        height:165px;
+        width:130px;
+        height:130px;
     }
 
 
     .photo-area{
 
-        bottom:-82px;
+        bottom:-60px;
     }
 
 
     .identity{
 
-        padding-top:102px;
+        padding-top:78px;
     }
 
 
     .name{
 
-        font-size:26px;
+        font-size:25px;
+    }
+
+}
+
+
+@media(max-width:330px){
+
+    .header{
+
+        height:255px;
+    }
+
+
+    .photo-frame{
+
+        width:120px;
+        height:120px;
+    }
+
+
+    .photo-area{
+
+        bottom:-56px;
+    }
+
+
+    .identity{
+
+        padding-top:72px;
     }
 
 
@@ -1066,52 +836,6 @@ body{
 
         grid-template-columns:
             1fr;
-    }
-
-
-    .buttons{
-
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-}
-
-
-/* =====================================================
-   VERY SMALL DEVICES
-===================================================== */
-
-@media(max-width:320px){
-
-    .header{
-
-        min-height:380px;
-    }
-
-
-    .photo-outer{
-
-        width:150px;
-        height:150px;
-    }
-
-
-    .photo-area{
-
-        bottom:-75px;
-    }
-
-
-    .identity{
-
-        padding-top:95px;
-    }
-
-
-    .name{
-
-        font-size:24px;
     }
 
 
@@ -1133,24 +857,16 @@ body{
 <div class="profile-card">
 
 
-    <!-- ==========================================
-         PREMIUM HEADER
-    =========================================== -->
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
-    <div class="header">
+    <header class="header">
 
-
-        <div class="header-frame"></div>
-
-        <div class="orbit one"></div>
-        <div class="orbit two"></div>
-        <div class="orbit three"></div>
-
-        <div class="corner top-left"></div>
-        <div class="corner top-right"></div>
+        <div class="top-line"></div>
 
 
-        <!-- Academic Year -->
+        <!-- Academic year -->
 
         <div class="badge">
 
@@ -1160,8 +876,6 @@ body{
 
         </div>
 
-
-        <!-- Title -->
 
         <div class="header-title">
 
@@ -1177,15 +891,13 @@ body{
         </div>
 
 
-        <!-- ======================================
-             PROFILE PHOTO
-        ======================================= -->
+        <!-- =====================================
+             PHOTO
+        ====================================== -->
 
         <div class="photo-area">
 
-            <div class="photo-glow"></div>
-
-            <div class="photo-outer">
+            <div class="photo-frame">
 
                 <div class="photo-inner">
 
@@ -1206,14 +918,14 @@ body{
         </div>
 
 
-    </div>
+    </header>
 
 
-    <!-- ==========================================
+    <!-- =========================================
          IDENTITY
-    =========================================== -->
+    ========================================== -->
 
-    <div class="identity">
+    <section class="identity">
 
 
         <h1 class="name">
@@ -1239,19 +951,19 @@ body{
         </div>
 
 
-    </div>
+    </section>
 
 
-    <!-- ==========================================
-         PERSONAL INFORMATION
-    =========================================== -->
+    <!-- =========================================
+         INFORMATION
+    ========================================== -->
 
-    <div class="info-section">
+    <section class="info-section">
 
 
         <div class="section-title">
 
-            <span class="section-title-icon">
+            <span class="section-icon">
 
                 <i class="fa-solid fa-table-cells"></i>
 
@@ -1264,8 +976,6 @@ body{
 
         <div class="info-grid">
 
-
-            <!-- Village -->
 
             <div class="info-box">
 
@@ -1284,8 +994,6 @@ body{
             </div>
 
 
-            <!-- Thana -->
-
             <div class="info-box">
 
                 <div class="info-label">
@@ -1303,8 +1011,6 @@ body{
             </div>
 
 
-            <!-- District -->
-
             <div class="info-box">
 
                 <div class="info-label">
@@ -1321,8 +1027,6 @@ body{
 
             </div>
 
-
-            <!-- Blood -->
 
             <div class="info-box blood-box">
 
@@ -1345,8 +1049,6 @@ body{
             </div>
 
 
-            <!-- Phone -->
-
             <div class="info-box">
 
                 <div class="info-label">
@@ -1363,8 +1065,6 @@ body{
 
             </div>
 
-
-            <!-- Gmail -->
 
             <div class="info-box">
 
@@ -1385,14 +1085,14 @@ body{
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- ==========================================
+    <!-- =========================================
          CONTACT
-    =========================================== -->
+    ========================================== -->
 
-    <div class="contact">
+    <section class="contact">
 
 
         <div class="contact-title">
@@ -1408,11 +1108,8 @@ body{
             <!-- CALL -->
 
             <a
-
                 class="btn call"
-
                 href="tel:01930216833"
-
             >
 
                 <i class="fa-solid fa-phone"></i>
@@ -1425,15 +1122,10 @@ body{
             <!-- FACEBOOK -->
 
             <a
-
                 class="btn facebook"
-
                 href="https://www.facebook.com/hasibulhoque3335"
-
                 target="_blank"
-
                 rel="noopener noreferrer"
-
             >
 
                 <i class="fa-brands fa-facebook-f"></i>
@@ -1446,15 +1138,10 @@ body{
             <!-- WHATSAPP -->
 
             <a
-
                 class="btn whatsapp"
-
                 href="https://wa.me/8801930216833"
-
                 target="_blank"
-
                 rel="noopener noreferrer"
-
             >
 
                 <i class="fa-brands fa-whatsapp"></i>
@@ -1467,14 +1154,11 @@ body{
             <!-- GMAIL -->
 
             <a
-
                 class="btn gmail"
-
                 href="mailto:hasibulhoque3335@gmail.com"
-
             >
 
-                <i class="fa-brands fa-google"></i>
+                <i class="fa-solid fa-envelope"></i>
 
                 Gmail
 
@@ -1484,15 +1168,10 @@ body{
             <!-- TELEGRAM -->
 
             <a
-
                 class="btn telegram"
-
                 href="https://t.me/hasibulhoque3335"
-
                 target="_blank"
-
                 rel="noopener noreferrer"
-
             >
 
                 <i class="fa-brands fa-telegram"></i>
@@ -1505,15 +1184,10 @@ body{
             <!-- INSTAGRAM -->
 
             <a
-
                 class="btn instagram"
-
                 href="https://www.instagram.com/hasibulhoque3335?igsi=MWZtYzJic2RmbDcyNg=="
-
                 target="_blank"
-
                 rel="noopener noreferrer"
-
             >
 
                 <i class="fa-brands fa-instagram"></i>
@@ -1525,14 +1199,14 @@ body{
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- ==========================================
+    <!-- =========================================
          FOOTER
-    =========================================== -->
+    ========================================== -->
 
-    <div class="footer">
+    <footer class="footer">
 
         <strong>
 
@@ -1544,7 +1218,7 @@ body{
 
         ID Card QR Directory
 
-    </div>
+    </footer>
 
 
 </div>
