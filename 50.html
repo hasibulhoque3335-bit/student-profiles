@@ -3,146 +3,509 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>হাসিবুল হক — শিক্ষার্থী পরিচিতি</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+
+<title>হাসিবুল হক — Student Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: 'Noto Sans Bengali', sans-serif;
-    background: linear-gradient(160deg, #0f3d2e 0%, #16543f 45%, #1c6b50 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 14px;
-  }
-  .card {
-    background: #fffdf7;
-    max-width: 420px;
-    width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
-  }
-  .banner {
-    background: #0f3d2e;
-    color: #f2e6c9;
-    text-align: center;
-    padding: 14px 12px;
-    font-size: 12.5px;
-    line-height: 1.5;
-    border-bottom: 3px solid #c9a227;
-  }
-  .photo-wrap {
-    display: flex;
-    justify-content: center;
-    margin-top: -2px;
-    background: #0f3d2e;
-    padding-bottom: 22px;
-  }
-  .photo {
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #c9a227;
-    background: #eee;
-  }
-  .name-block {
-    text-align: center;
-    padding: 18px 16px 4px;
-  }
-  .name {
-    font-size: 22px;
-    font-weight: 700;
-    color: #16543f;
-    margin: 0;
-  }
-  .father {
-    font-size: 14px;
-    color: #666;
-    margin-top: 4px;
-  }
-  .info {
-    padding: 14px 22px 24px;
-  }
-  .row {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee2c6;
-    font-size: 15px;
-  }
-  .row:last-child { border-bottom: none; }
-  .label {
-    color: #8a7a3f;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  .value {
-    text-align: right;
-    color: #222;
-    word-break: break-word;
-  }
-  .blood {
-    display: inline-block;
-    background: #b1191c;
-    color: #fff;
-    font-weight: 700;
-    padding: 2px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-  }
-  .links {
-    display: flex;
-    gap: 10px;
-    padding: 0 22px 22px;
-  }
-  .btn {
-    flex: 1;
-    text-align: center;
-    padding: 11px 8px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-  }
-  .btn.call { background: #16543f; color: #fff; }
-  .btn.fb { background: #1877f2; color: #fff; }
-  .btn.mail { background: #c9a227; color: #fff; }
-  .footer {
-    text-align: center;
-    font-size: 11px;
-    color: #999;
-    padding: 0 16px 18px;
-  }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --green:#073b2b;
+    --green2:#0b5a42;
+    --green3:#0f7656;
+    --gold:#d7b65a;
+    --gold2:#f0d889;
+    --cream:#fffdf7;
+    --text:#1d2924;
+    --muted:#718078;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Noto Sans Bengali',sans-serif;
+    background:
+        radial-gradient(circle at 15% 15%,rgba(240,216,137,.14),transparent 28%),
+        radial-gradient(circle at 85% 85%,rgba(34,148,111,.18),transparent 30%),
+        linear-gradient(145deg,#021e16,#073b2b 48%,#0b5a42);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 14px;
+}
+
+/* MAIN CARD */
+
+.profile-card{
+    width:100%;
+    max-width:430px;
+    background:var(--cream);
+    border-radius:30px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.42),
+        0 0 0 1px rgba(255,255,255,.12);
+}
+
+/* TOP HEADER */
+
+.header{
+    position:relative;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(240,216,137,.12),transparent 25%),
+        linear-gradient(145deg,#052c21,#073b2b 60%,#0b5a42);
+    color:white;
+    text-align:center;
+    padding:24px 20px 95px;
+    overflow:hidden;
+}
+
+.header::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border:1px solid rgba(240,216,137,.14);
+    border-radius:50%;
+    top:-125px;
+    right:-70px;
+}
+
+.header::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border:1px solid rgba(240,216,137,.12);
+    border-radius:50%;
+    bottom:-125px;
+    left:-65px;
+}
+
+.badge{
+    position:relative;
+    z-index:2;
+    display:inline-block;
+    padding:7px 15px;
+    border:1px solid rgba(240,216,137,.45);
+    border-radius:50px;
+    color:var(--gold2);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.2px;
+    background:rgba(255,255,255,.045);
+    backdrop-filter:blur(8px);
+}
+
+/* PHOTO */
+
+.photo-area{
+    position:absolute;
+    left:50%;
+    bottom:-70px;
+    transform:translateX(-50%);
+    z-index:5;
+}
+
+.photo-ring{
+    width:148px;
+    height:148px;
+    border-radius:50%;
+    padding:5px;
+    background:linear-gradient(135deg,var(--gold2),var(--gold),#9e7b20);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.35),
+        0 0 0 7px rgba(255,255,255,.08);
+}
+
+.photo{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    background:#eee;
+    border:4px solid var(--green);
+}
+
+/* PROFILE NAME */
+
+.identity{
+    padding:88px 20px 18px;
+    text-align:center;
+}
+
+.name{
+    color:var(--green);
+    font-size:27px;
+    font-weight:800;
+    line-height:1.35;
+}
+
+.father{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.student-tag{
+    margin-top:12px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:#edf6f2;
+    color:var(--green2);
+    padding:5px 12px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:600;
+}
+
+/* INFORMATION */
+
+.info-section{
+    padding:10px 18px 18px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--green);
+    font-size:14px;
+    font-weight:700;
+    margin:5px 2px 12px;
+}
+
+.section-title span{
+    width:27px;
+    height:27px;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#edf6f2;
+    color:var(--green2);
+}
+
+/* INFO GRID */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.info-box{
+    background:#f7f8f5;
+    border:1px solid #e8ece7;
+    border-radius:15px;
+    padding:12px;
+    min-height:68px;
+    transition:.2s;
+}
+
+.info-box:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,.07);
+}
+
+.info-label{
+    font-size:10px;
+    color:#87928d;
+    margin-bottom:4px;
+}
+
+.info-value{
+    font-size:13px;
+    color:#1c2823;
+    font-weight:600;
+    word-break:break-word;
+}
+
+/* BLOOD */
+
+.blood-box{
+    background:linear-gradient(135deg,#fff5f5,#fffafa);
+    border-color:#f0d8d8;
+}
+
+.blood{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:43px;
+    padding:4px 10px;
+    background:#b51e27;
+    color:#fff;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:800;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:4px 18px 20px;
+}
+
+.contact-title{
+    color:var(--green);
+    font-size:14px;
+    font-weight:700;
+    margin:4px 2px 11px;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+}
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    min-height:44px;
+    border-radius:13px;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.04);
+}
+
+.call{
+    background:var(--green);
+    color:white;
+}
+
+.facebook{
+    background:#1877f2;
+    color:white;
+}
+
+.email{
+    background:#f1b928;
+    color:#fff;
+    grid-column:span 2;
+}
+
+/* FOOTER */
+
+.footer{
+    border-top:1px solid #eceeea;
+    padding:14px 15px 17px;
+    text-align:center;
+    color:#9aa39e;
+    font-size:10px;
+}
+
+.footer strong{
+    color:var(--green2);
+    font-weight:700;
+}
+
+/* MOBILE */
+
+@media(max-width:360px){
+
+    body{
+        padding:15px 9px;
+    }
+
+    .profile-card{
+        border-radius:24px;
+    }
+
+    .name{
+        font-size:24px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .photo-ring{
+        width:138px;
+        height:138px;
+    }
+}
 </style>
 </head>
+
 <body>
-  <div class="card">
-    <div class="banner">১৪৪৭-৪৮ হিজরী ২০২৬-২০২৭ শিক্ষাবর্ষ — তাকমীল ফিল হাদিস সমাপনী শিক্ষার্থীবৃন্দ</div>
-    <div class="photo-wrap">
-      <img class="photo" src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY" alt="হাসিবুল হক">
+
+<div class="profile-card">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <div class="badge">
+            ১৪৪৭–৪৮ হিজরী • ২০২৬–২০২৭
+        </div>
+
+        <div style="
+            margin-top:10px;
+            font-size:13px;
+            font-weight:600;
+            opacity:.9;
+        ">
+            তাকমীল ফিল হাদিস
+        </div>
+
+        <div style="
+            margin-top:3px;
+            font-size:10px;
+            color:#d9e6df;
+        ">
+            সমাপনী শিক্ষার্থী পরিচিতি
+        </div>
+
+        <!-- PHOTO -->
+        <div class="photo-area">
+            <div class="photo-ring">
+
+                <img
+                    class="photo"
+                    src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY"
+                    alt="হাসিবুল হক">
+
+            </div>
+        </div>
+
     </div>
-    <div class="name-block">
-      <p class="name">হাসিবুল হক</p>
-      <div class="father">পিতা: মুবিনুল হক</div>
+
+
+    <!-- IDENTITY -->
+
+    <div class="identity">
+
+        <h1 class="name">
+            হাসিবুল হক
+        </h1>
+
+        <div class="father">
+            পিতা: মুবিনুল হক
+        </div>
+
+        <div class="student-tag">
+            🎓 সমাপনী শিক্ষার্থী
+        </div>
+
     </div>
-    <div class="info">
-      <div class="row"><span class="label">গ্রাম</span><span class="value">নদ্দাপাড়া</span></div>
-      <div class="row"><span class="label">থানা</span><span class="value">দক্ষিণখান</span></div>
-      <div class="row"><span class="label">জেলা</span><span class="value">ঢাকা</span></div>
-      <div class="row"><span class="label">রক্তের গ্রুপ</span><span class="value"><span class="blood">O+</span></span></div>
-      <div class="row"><span class="label">ফোন</span><span class="value">01930216833</span></div>
-      <div class="row"><span class="label">জিমেইল</span><span class="value">hasibulhoque3335@gmail.com</span></div>
+
+
+    <!-- INFORMATION -->
+
+    <div class="info-section">
+
+        <div class="section-title">
+            <span>▦</span>
+            ব্যক্তিগত তথ্য
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <div class="info-label">গ্রাম</div>
+                <div class="info-value">নদ্দাপাড়া</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">থানা</div>
+                <div class="info-value">দক্ষিণখান</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">জেলা</div>
+                <div class="info-value">ঢাকা</div>
+            </div>
+
+            <div class="info-box blood-box">
+                <div class="info-label">রক্তের গ্রুপ</div>
+                <div class="info-value">
+                    <span class="blood">O+</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">মোবাইল</div>
+                <div class="info-value">
+                    01930216833
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">ই-মেইল</div>
+                <div class="info-value">
+                    hasibulhoque3335@gmail.com
+                </div>
+            </div>
+
+        </div>
+
     </div>
-    <div class="links">
-      <a class="btn call" href="tel:01930216833">📞 কল</a>
-      <a class="btn fb" href="https://www.facebook.com/hasibulhoque3335" target="_blank">Facebook</a>
+
+
+    <!-- CONTACT BUTTONS -->
+
+    <div class="contact">
+
+        <div class="contact-title">
+            যোগাযোগ
+        </div>
+
+        <div class="buttons">
+
+            <a
+                class="btn call"
+                href="tel:01930216833">
+                ☎ কল করুন
+            </a>
+
+            <a
+                class="btn facebook"
+                href="https://www.facebook.com/hasibulhoque3335"
+                target="_blank"
+                rel="noopener">
+                f Facebook
+            </a>
+
+            <a
+                class="btn email"
+                href="mailto:hasibulhoque3335@gmail.com">
+                ✉ ই-মেইল পাঠান
+            </a>
+
+        </div>
+
     </div>
-    <div class="footer">ক্রমিক নং 50 • ID Card QR Directory</div>
-  </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <strong>ক্রমিক নং ৫০</strong>
+        &nbsp;•&nbsp;
+        ID Card QR Directory
+
+    </div>
+
+</div>
+
 </body>
 </html>
