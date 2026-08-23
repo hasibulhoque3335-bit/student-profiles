@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,13 +9,34 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 <style>
 
 /* =====================================================
-   BASIC
+   ROOT
+===================================================== */
+
+:root{
+
+    --navy:#071c2d;
+    --navy2:#0d3047;
+    --blue:#124c68;
+
+    --gold:#d7b65a;
+    --gold-light:#f1d98a;
+
+    --cream:#fffdf8;
+    --soft:#f5f7f6;
+
+    --text:#18252d;
+    --muted:#7d888c;
+
+    --line:#e6ebe8;
+
+}
+
+
+/* =====================================================
+   RESET
 ===================================================== */
 
 *{
@@ -23,26 +45,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     box-sizing:border-box;
 }
 
-:root{
-    --forest:#073b2d;
-    --forest-dark:#04291f;
-    --forest-light:#0b6048;
 
-    --gold:#c8a84e;
-    --gold-light:#e9d58b;
-
-    --cream:#fffdf8;
-    --soft:#f6f7f3;
-
-    --text:#17241f;
-    --muted:#858e89;
-
-    --border:#e4e8e3;
+html{
+    min-height:100%;
 }
+
 
 body{
 
-    margin:0;
     min-height:100vh;
 
     font-family:
@@ -51,10 +61,23 @@ body{
 
     background:
 
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(215,182,90,.12),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(35,117,150,.18),
+            transparent 30%
+        ),
+
         linear-gradient(
-            135deg,
-            #06271e,
-            #0a4937
+            145deg,
+            #030d16,
+            #071c2d 50%,
+            #0d3047
         );
 
     display:flex;
@@ -64,9 +87,12 @@ body{
     align-items:flex-start;
 
     padding:
-        18px 10px 35px;
+        18px
+        12px
+        40px;
 
     overflow-x:hidden;
+
 }
 
 
@@ -82,48 +108,65 @@ body{
 
     background:var(--cream);
 
-    border-radius:26px;
+    border-radius:28px;
 
     overflow:hidden;
 
     position:relative;
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,.35);
+
+        0 30px 70px rgba(0,0,0,.42),
+
+        0 0 0 1px
+        rgba(255,255,255,.12);
+
 }
 
 
 /* =====================================================
-   HEADER — SHORT & COMPACT
+   TOP HEADER
 ===================================================== */
 
 .header{
 
-    height:285px;
-
     position:relative;
+
+    height:390px;
+
+    overflow:hidden;
 
     text-align:center;
 
     color:#fff;
 
-    padding:
-        22px 15px 0;
-
     background:
 
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(215,182,90,.10),
+            transparent 26%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(32,119,151,.22),
+            transparent 30%
+        ),
+
         linear-gradient(
-            135deg,
-            #042b20 0%,
-            #073b2d 55%,
-            #0a5140 100%
+            145deg,
+            #061522,
+            #09273a 52%,
+            #0c4157
         );
 
-    overflow:visible;
 }
 
 
-/* subtle light */
+/* =====================================================
+   DECORATIVE LINES
+===================================================== */
 
 .header::before{
 
@@ -131,21 +174,22 @@ body{
 
     position:absolute;
 
-    width:260px;
-    height:260px;
+    width:420px;
+    height:420px;
+
+    border:
+
+        1px solid
+        rgba(215,182,90,.15);
 
     border-radius:50%;
 
-    right:-130px;
-    top:-145px;
+    right:-230px;
 
-    border:
-        1px solid
-        rgba(233,213,139,.13);
+    top:-245px;
+
 }
 
-
-/* second subtle curve */
 
 .header::after{
 
@@ -153,48 +197,99 @@ body{
 
     position:absolute;
 
-    width:190px;
-    height:190px;
+    width:270px;
+    height:270px;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.07);
 
     border-radius:50%;
 
-    left:-105px;
-    bottom:-110px;
+    left:-145px;
 
-    border:
-        1px solid
-        rgba(233,213,139,.10);
+    bottom:-170px;
+
 }
 
 
 /* =====================================================
-   SMALL GOLD TOP LINE
+   INNER FRAME
 ===================================================== */
 
-.top-line{
+.header-frame{
 
     position:absolute;
 
-    left:12%;
-    right:12%;
+    inset:16px;
 
-    top:11px;
+    border:
 
-    height:1px;
+        1px solid
+        rgba(215,182,90,.24);
 
-    background:
+    border-radius:22px;
 
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(233,213,139,.55),
-            transparent
-        );
+    pointer-events:none;
+
+}
+
+
+/* corner decorations */
+
+.header-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:55px;
+    height:55px;
+
+    top:-1px;
+    left:-1px;
+
+    border-top:
+        2px solid
+        rgba(215,182,90,.65);
+
+    border-left:
+        2px solid
+        rgba(215,182,90,.65);
+
+    border-radius:18px 0 0 0;
+
+}
+
+
+.header-frame::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:55px;
+    height:55px;
+
+    bottom:-1px;
+    right:-1px;
+
+    border-bottom:
+        2px solid
+        rgba(215,182,90,.65);
+
+    border-right:
+        2px solid
+        rgba(215,182,90,.65);
+
+    border-radius:0 0 18px 0;
+
 }
 
 
 /* =====================================================
-   YEAR
+   YEAR BADGE
 ===================================================== */
 
 .badge{
@@ -203,25 +298,36 @@ body{
 
     z-index:5;
 
-    display:inline-block;
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:27px;
 
     padding:
-        6px 15px;
+        7px 16px;
 
     border:
         1px solid
-        rgba(233,213,139,.5);
+        rgba(241,217,138,.55);
 
-    border-radius:30px;
+    border-radius:50px;
 
     color:var(--gold-light);
 
-    font-size:10.5px;
+    font-size:11px;
 
     font-weight:600;
 
     background:
-        rgba(255,255,255,.035);
+        rgba(255,255,255,.045);
+
+    box-shadow:
+        inset 0 0 20px
+        rgba(215,182,90,.04);
+
 }
 
 
@@ -237,9 +343,12 @@ body{
 
     margin-top:13px;
 
-    font-size:18px;
+    font-size:19px;
 
     font-weight:800;
+
+    letter-spacing:.2px;
+
 }
 
 
@@ -251,14 +360,15 @@ body{
 
     margin-top:3px;
 
-    font-size:10.5px;
+    font-size:11px;
 
-    color:#d7e3de;
+    color:#d9e3e8;
+
 }
 
 
 /* =====================================================
-   PHOTO
+   PHOTO AREA
 ===================================================== */
 
 .photo-area{
@@ -267,71 +377,126 @@ body{
 
     left:50%;
 
-    bottom:-64px;
+    bottom:-62px;
 
     transform:translateX(-50%);
 
-    z-index:20;
+    z-index:30;
+
 }
 
 
-/*
-   Only TWO rings.
-   Clean and premium.
-*/
+/* =====================================================
+   PREMIUM PHOTO FRAME
+===================================================== */
 
 .photo-frame{
 
-    width:138px;
-    height:138px;
+    width:142px;
+    height:142px;
 
-    padding:5px;
+    position:relative;
 
     border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     background:
 
         linear-gradient(
             135deg,
-            #f1dda0,
-            #c8a84e,
-            #96751d
+            var(--gold-light),
+            var(--gold),
+            #a77e20,
+            var(--gold-light)
         );
+
+    padding:5px;
 
     box-shadow:
 
-        0 12px 30px
-        rgba(0,0,0,.30);
+        0 15px 32px
+        rgba(0,0,0,.30),
+
+        0 0 0 7px
+        rgba(215,182,90,.10);
+
 }
 
 
-.photo-inner{
+/* inner navy ring */
 
-    width:100%;
-    height:100%;
+.photo-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:7px;
 
     border-radius:50%;
 
-    padding:4px;
+    border:
+        2px solid
+        rgba(7,28,45,.95);
 
-    background:var(--forest);
+    pointer-events:none;
+
 }
 
+
+/* small decorative gold arc */
+
+.photo-frame::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+    height:24px;
+
+    right:3px;
+    top:18px;
+
+    border-top:
+        4px solid
+        var(--gold-light);
+
+    border-right:
+        4px solid
+        var(--gold-light);
+
+    border-radius:0 15px 0 0;
+
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
 
 .photo{
 
     width:100%;
     height:100%;
 
-    border-radius:50%;
-
     object-fit:cover;
 
     display:block;
 
+    border-radius:50%;
+
     border:
-        2px solid
-        #fffdf5;
+        5px solid
+        var(--navy);
+
+    background:#eee;
+
 }
 
 
@@ -341,26 +506,26 @@ body{
 
 .identity{
 
-    position:relative;
-
     text-align:center;
 
     padding:
-        82px 18px 21px;
+        82px 20px 19px;
 
     background:var(--cream);
+
 }
 
 
 .name{
 
-    color:var(--forest);
+    color:var(--navy);
 
-    font-size:27px;
+    font-size:28px;
 
     line-height:1.3;
 
     font-weight:800;
+
 }
 
 
@@ -368,15 +533,16 @@ body{
 
     margin-top:5px;
 
-    color:var(--muted);
+    color:#87908f;
 
-    font-size:13.5px;
+    font-size:14px;
+
 }
 
 
-/* student badge */
-
 .student-tag{
+
+    margin-top:11px;
 
     display:inline-flex;
 
@@ -384,42 +550,43 @@ body{
 
     gap:7px;
 
-    margin-top:11px;
-
     padding:
-        6px 14px;
+        6px 15px;
 
-    border-radius:30px;
+    border-radius:50px;
 
-    color:var(--forest);
-
-    background:#eef6f2;
+    background:#f0f5f4;
 
     border:
-        1px solid #dcebe4;
+        1px solid
+        #dce8e4;
+
+    color:#174b5d;
 
     font-size:11px;
 
     font-weight:700;
+
 }
 
 
-.student-tag i{
+.student-icon{
 
-    color:var(--gold);
+    width:17px;
+    height:17px;
 
-    font-size:13px;
 }
 
 
 /* =====================================================
-   SECTION TITLE
+   SECTION
 ===================================================== */
 
 .info-section{
 
     padding:
-        3px 18px 20px;
+        5px 18px 20px;
+
 }
 
 
@@ -432,13 +599,14 @@ body{
     gap:9px;
 
     margin:
-        2px 2px 12px;
+        4px 2px 13px;
 
-    color:var(--forest);
+    color:var(--navy);
 
     font-size:15px;
 
     font-weight:800;
+
 }
 
 
@@ -449,23 +617,20 @@ body{
 
     display:flex;
 
+    align-items:center;
     justify-content:center;
 
-    align-items:center;
+    border-radius:10px;
 
-    border-radius:9px;
+    background:#edf3f5;
 
-    color:var(--gold);
+    color:#17546c;
 
-    background:#eef6f2;
-
-    border:
-        1px solid #dcebe4;
 }
 
 
 /* =====================================================
-   INFORMATION
+   INFORMATION GRID
 ===================================================== */
 
 .info-grid{
@@ -475,45 +640,48 @@ body{
     grid-template-columns:
         1fr 1fr;
 
-    gap:9px;
+    gap:10px;
+
 }
 
 
 .info-box{
 
-    min-height:76px;
+    min-height:73px;
 
-    padding:
-        12px 13px;
+    padding:12px 13px;
+
+    border:
+        1px solid
+        var(--line);
 
     border-radius:16px;
 
     background:
+
         linear-gradient(
             145deg,
             #fafbf9,
-            #f5f6f3
+            #f5f7f6
         );
-
-    border:
-        1px solid
-        var(--border);
 
     display:flex;
 
     flex-direction:column;
 
     justify-content:center;
+
 }
 
 
 .info-label{
 
-    color:#929a96;
+    color:#8c9697;
 
-    font-size:9.5px;
+    font-size:10px;
 
     margin-bottom:5px;
+
 }
 
 
@@ -521,25 +689,35 @@ body{
 
     color:var(--text);
 
-    font-size:13.5px;
+    font-size:14px;
 
     font-weight:700;
 
     line-height:1.45;
 
+    word-break:break-word;
+
     overflow-wrap:anywhere;
 
-    word-break:break-word;
 }
 
 
-/* blood */
+/* =====================================================
+   BLOOD
+===================================================== */
 
 .blood-box{
 
-    background:#fff8f8;
+    background:
 
-    border-color:#efdada;
+        linear-gradient(
+            145deg,
+            #fff8f8,
+            #fffdfd
+        );
+
+    border-color:#efdede;
+
 }
 
 
@@ -554,17 +732,18 @@ body{
     min-width:46px;
 
     padding:
-        4px 12px;
+        5px 13px;
 
-    border-radius:30px;
+    border-radius:50px;
 
-    background:#b51e29;
+    background:#b91f2b;
 
-    color:#fff;
+    color:white;
 
     font-size:13px;
 
     font-weight:800;
+
 }
 
 
@@ -576,19 +755,21 @@ body{
 
     padding:
         2px 18px 22px;
+
 }
 
 
 .contact-title{
 
-    color:var(--forest);
+    margin:
+        3px 2px 12px;
+
+    color:var(--navy);
 
     font-size:15px;
 
     font-weight:800;
 
-    margin:
-        2px 2px 11px;
 }
 
 
@@ -600,12 +781,17 @@ body{
         1fr 1fr;
 
     gap:9px;
+
 }
 
 
+/* =====================================================
+   BUTTON
+===================================================== */
+
 .btn{
 
-    min-height:45px;
+    min-height:47px;
 
     display:flex;
 
@@ -615,50 +801,73 @@ body{
 
     gap:7px;
 
-    border-radius:13px;
+    border-radius:14px;
 
     text-decoration:none;
 
     color:#fff;
 
-    font-size:11.5px;
+    font-size:12px;
 
     font-weight:700;
 
     box-shadow:
-        0 5px 12px
-        rgba(0,0,0,.09);
 
-    transition:.2s;
+        0 6px 14px
+        rgba(0,0,0,.10);
+
+    transition:
+        transform .18s ease,
+        filter .18s ease;
+
 }
 
 
 .btn:hover{
 
     transform:translateY(-2px);
+
+    filter:brightness(1.05);
+
 }
 
 
-.btn i{
+.btn:active{
 
-    font-size:15px;
+    transform:scale(.97);
+
 }
 
 
-/* Call */
+/* =====================================================
+   ICON
+===================================================== */
+
+.btn svg{
+
+    width:18px;
+    height:18px;
+
+    flex:none;
+
+}
+
+
+/* =====================================================
+   BUTTON COLORS
+===================================================== */
 
 .call{
 
     background:
         linear-gradient(
             135deg,
-            #073b2d,
-            #0a6048
+            #09283a,
+            #0d5066
         );
+
 }
 
-
-/* Facebook */
 
 .facebook{
 
@@ -666,51 +875,47 @@ body{
         linear-gradient(
             135deg,
             #1877f2,
-            #0866df
+            #0866d5
         );
+
 }
 
-
-/* WhatsApp */
 
 .whatsapp{
 
     background:
         linear-gradient(
             135deg,
-            #20c967,
-            #15a957
+            #16c96b,
+            #25d366
         );
+
 }
 
-
-/* Gmail */
 
 .gmail{
 
     background:
         linear-gradient(
             135deg,
-            #ea4335,
-            #d93025
+            #c99d20,
+            #e0b936
         );
+
 }
 
-
-/* Telegram */
 
 .telegram{
 
     background:
         linear-gradient(
             135deg,
-            #229ed9,
-            #168dcc
+            #168dcc,
+            #229ed9
         );
+
 }
 
-
-/* Instagram */
 
 .instagram{
 
@@ -718,9 +923,10 @@ body{
         linear-gradient(
             135deg,
             #833ab4,
-            #fd1d1d 55%,
-            #fcb045
+            #e1306c,
+            #f77737
         );
+
 }
 
 
@@ -730,26 +936,30 @@ body{
 
 .footer{
 
-    border-top:
-        1px solid
-        #eceeea;
-
     padding:
-        14px 12px 17px;
+        15px
+        15px
+        18px;
 
     text-align:center;
 
-    color:#9ba39f;
+    border-top:
+        1px solid
+        #ecefeb;
 
-    font-size:9.5px;
+    color:#9aa3a1;
+
+    font-size:10px;
+
+    background:#fffdf8;
+
 }
 
 
 .footer strong{
 
-    color:var(--forest);
+    color:#174b5d;
 
-    font-weight:800;
 }
 
 
@@ -762,44 +972,53 @@ body{
     body{
 
         padding:
-            10px 7px 25px;
+            10px
+            7px
+            30px;
+
     }
 
 
     .profile-card{
 
-        border-radius:23px;
+        border-radius:24px;
+
     }
 
 
     .header{
 
-        height:270px;
+        height:365px;
+
     }
 
 
     .photo-frame{
 
-        width:130px;
-        height:130px;
+        width:132px;
+        height:132px;
+
     }
 
 
     .photo-area{
 
-        bottom:-60px;
+        bottom:-58px;
+
     }
 
 
     .identity{
 
-        padding-top:78px;
+        padding-top:76px;
+
     }
 
 
     .name{
 
         font-size:25px;
+
     }
 
 }
@@ -809,40 +1028,51 @@ body{
 
     .header{
 
-        height:255px;
+        height:350px;
+
+    }
+
+
+    .header-title{
+
+        font-size:17px;
+
     }
 
 
     .photo-frame{
 
-        width:120px;
-        height:120px;
+        width:122px;
+        height:122px;
+
     }
 
 
     .photo-area{
 
-        bottom:-56px;
+        bottom:-53px;
+
     }
 
 
     .identity{
 
-        padding-top:72px;
+        padding-top:70px;
+
     }
 
 
     .info-grid{
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns:1fr;
+
     }
 
 
     .buttons{
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns:1fr;
+
     }
 
 }
@@ -863,62 +1093,42 @@ body{
 
     <header class="header">
 
-        <div class="top-line"></div>
+        <div class="header-frame"></div>
 
-
-        <!-- Academic year -->
 
         <div class="badge">
-
-            ১৪৪৭–৪৮ হিজরী
-            &nbsp;•&nbsp;
-            ২০২৬–২০২৭
-
+            ১৪৪৭–৪৮ হিজরী • ২০২৬–২০২৭
         </div>
 
 
         <div class="header-title">
-
             তাকমীল ফিল হাদিস
-
         </div>
 
 
         <div class="header-subtitle">
-
             সমাপনী শিক্ষার্থী পরিচিতি
-
         </div>
 
 
-        <!-- =====================================
-             PHOTO
-        ====================================== -->
+        <!-- PHOTO -->
 
         <div class="photo-area">
 
             <div class="photo-frame">
 
-                <div class="photo-inner">
-
-                    <img
-
-                        class="photo"
-
-                        src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY"
-
-                        alt="হাসিবুল হক"
-
-                    >
-
-                </div>
+                <img
+                    class="photo"
+                    src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY"
+                    alt="হাসিবুল হক"
+                >
 
             </div>
 
         </div>
 
-
     </header>
+
 
 
     <!-- =========================================
@@ -927,45 +1137,57 @@ body{
 
     <section class="identity">
 
-
         <h1 class="name">
-
             হাসিবুল হক
-
         </h1>
 
 
         <div class="father">
-
             পিতা: মুবিনুল হক
-
         </div>
 
 
         <div class="student-tag">
 
-            <i class="fa-solid fa-graduation-cap"></i>
+            <!-- Graduation icon -->
+
+            <svg
+                class="student-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+            >
+                <path d="M12 3 1 8.5l11 5 9-4.09V16h2V8.5L12 3zm-6 8.18V17c0 2.21 2.69 4 6 4s6-1.79 6-4v-5.82l-6 2.73-6-2.73z"/>
+            </svg>
 
             সমাপনী শিক্ষার্থী
 
         </div>
 
-
     </section>
 
 
+
     <!-- =========================================
-         INFORMATION
+         PERSONAL INFORMATION
     ========================================== -->
 
     <section class="info-section">
-
 
         <div class="section-title">
 
             <span class="section-icon">
 
-                <i class="fa-solid fa-table-cells"></i>
+                <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M8 3v18M16 3v18M3 8h18M3 16h18"/>
+                </svg>
 
             </span>
 
@@ -977,71 +1199,63 @@ body{
         <div class="info-grid">
 
 
+            <!-- VILLAGE -->
+
             <div class="info-box">
 
                 <div class="info-label">
-
                     গ্রাম
-
                 </div>
 
                 <div class="info-value">
-
                     নদ্দাপাড়া
-
                 </div>
 
             </div>
 
 
+            <!-- THANA -->
+
             <div class="info-box">
 
                 <div class="info-label">
-
                     থানা
-
                 </div>
 
                 <div class="info-value">
-
                     দক্ষিণখান
-
                 </div>
 
             </div>
 
+
+            <!-- DISTRICT -->
 
             <div class="info-box">
 
                 <div class="info-label">
-
                     জেলা
-
                 </div>
 
                 <div class="info-value">
-
                     ঢাকা
-
                 </div>
 
             </div>
 
+
+            <!-- BLOOD -->
 
             <div class="info-box blood-box">
 
                 <div class="info-label">
-
                     রক্তের গ্রুপ
-
                 </div>
 
                 <div class="info-value">
 
                     <span class="blood">
-
                         O+
-
                     </span>
 
                 </div>
@@ -1049,43 +1263,39 @@ body{
             </div>
 
 
+            <!-- PHONE -->
+
             <div class="info-box">
 
                 <div class="info-label">
-
                     মোবাইল
-
                 </div>
 
                 <div class="info-value">
-
                     01930216833
-
                 </div>
 
             </div>
 
+
+            <!-- GMAIL -->
 
             <div class="info-box">
 
                 <div class="info-label">
-
                     জিমেইল
-
                 </div>
 
                 <div class="info-value">
-
                     hasibulhoque3335@gmail.com
-
                 </div>
 
             </div>
-
 
         </div>
 
     </section>
+
 
 
     <!-- =========================================
@@ -1094,11 +1304,8 @@ body{
 
     <section class="contact">
 
-
         <div class="contact-title">
-
             যোগাযোগ
-
         </div>
 
 
@@ -1112,11 +1319,30 @@ body{
                 href="tel:01930216833"
             >
 
-                <i class="fa-solid fa-phone"></i>
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                    19.79 19.79 0 0 1-8.63-3.07
+                    19.5 19.5 0 0 1-6-6
+                    A19.79 19.79 0 0 1 2.12 4.18
+                    2 2 0 0 1 4.11 2h3
+                    a2 2 0 0 1 2 1.72
+                    12.84 12.84 0 0 0 .7 2.81
+                    2 2 0 0 1-.45 2.11L8.09 9.91
+                    a16 16 0 0 0 6 6l1.27-1.27
+                    a2 2 0 0 1 2.11-.45
+                    12.84 12.84 0 0 0 2.81.7
+                    A2 2 0 0 1 22 16.92z"/>
+                </svg>
 
                 কল করুন
 
             </a>
+
 
 
             <!-- FACEBOOK -->
@@ -1125,14 +1351,22 @@ body{
                 class="btn facebook"
                 href="https://www.facebook.com/hasibulhoque3335"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
             >
 
-                <i class="fa-brands fa-facebook-f"></i>
+                <!-- Facebook official-style icon -->
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+                    <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.87.24-1.46 1.5-1.46h1.7V5a22 22 0 0 0-2.45-.13c-2.43 0-4.1 1.48-4.1 4.2V11H7.4v3h2.75v8h3.35z"/>
+                </svg>
 
                 Facebook
 
             </a>
+
 
 
             <!-- WHATSAPP -->
@@ -1141,14 +1375,22 @@ body{
                 class="btn whatsapp"
                 href="https://wa.me/8801930216833"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
             >
 
-                <i class="fa-brands fa-whatsapp"></i>
+                <!-- WhatsApp icon -->
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+                    <path d="M12 2a9.9 9.9 0 0 0-8.53 15L2 22l5.17-1.35A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.08-1.12l-.29-.17-3.07.8.82-2.99-.19-.3A8 8 0 1 1 12 20zm4.39-5.91c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.18-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.15 1.51.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/>
+                </svg>
 
                 WhatsApp
 
             </a>
+
 
 
             <!-- GMAIL -->
@@ -1158,11 +1400,40 @@ body{
                 href="mailto:hasibulhoque3335@gmail.com"
             >
 
-                <i class="fa-solid fa-envelope"></i>
+                <!-- Gmail-style icon -->
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                >
+                    <path
+                        d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5v-11z"
+                        fill="white"
+                        opacity=".25"
+                    />
+
+                    <path
+                        d="M4 7l8 6 8-6"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+
+                    <path
+                        d="M4 17V7l8 6 8-6v10"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+
+                </svg>
 
                 Gmail
 
             </a>
+
 
 
             <!-- TELEGRAM -->
@@ -1171,14 +1442,22 @@ body{
                 class="btn telegram"
                 href="https://t.me/hasibulhoque3335"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
             >
 
-                <i class="fa-brands fa-telegram"></i>
+                <!-- Telegram -->
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+                    <path d="M21.8 4.3 18.7 19c-.23 1.04-.85 1.3-1.72.81l-4.73-3.49-2.28 2.2c-.25.25-.46.46-.94.46l.34-4.82 8.77-7.92c.38-.34-.08-.53-.59-.19L6.7 12.7 2.04 11.24c-1.01-.32-1.03-1.01.21-1.5L20.46 2.7c.84-.31 1.58.2 1.34 1.6z"/>
+                </svg>
 
                 Telegram
 
             </a>
+
 
 
             <!-- INSTAGRAM -->
@@ -1187,10 +1466,41 @@ body{
                 class="btn instagram"
                 href="https://www.instagram.com/hasibulhoque3335?igsi=MWZtYzJic2RmbDcyNg=="
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
             >
 
-                <i class="fa-brands fa-instagram"></i>
+                <!-- Instagram -->
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+
+                    <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="5"
+                    />
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4"
+                    />
+
+                    <circle
+                        cx="17.5"
+                        cy="6.5"
+                        r="1"
+                        fill="currentColor"
+                        stroke="none"
+                    />
+
+                </svg>
 
                 Instagram
 
@@ -1202,6 +1512,7 @@ body{
     </section>
 
 
+
     <!-- =========================================
          FOOTER
     ========================================== -->
@@ -1209,9 +1520,7 @@ body{
     <footer class="footer">
 
         <strong>
-
             ক্রমিক নং ৫০
-
         </strong>
 
         &nbsp; • &nbsp;
