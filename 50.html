@@ -1,621 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hasibul Hoque — Student Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Hasibul Hoque | Student Profile</title>
 
-<style>
-/* =====================================================
-   BASIC
-===================================================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-:root{
-    --forest:#073b2d;
-    --forest-dark:#04291f;
-    --forest-light:#0b6048;
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    --gold:#c8a84e;
-    --gold-light:#e9d58b;
+    <style>
+        /* =====================================================
+           RESET + ROOT COLORS
+        ===================================================== */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-    --cream:#fffdf8;
-    --soft:#f6f7f3;
+        :root{
+            --navy:#022f45;
+            --navy-deep:#021f30;
+            --teal:#005b72;
+            --teal-dark:#00475b;
+            --gold:#b89445;
+            --white:#ffffff;
+            --off-white:#f7f8f8;
+            --text:#253239;
+            --muted:#79858b;
+            --light-border:#e6ecee;
+        }
 
-    --text:#17241f;
-    --muted:#7d8783;
+        body{
+            min-height:100vh;
+            padding:28px 12px 45px;
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+            font-family:"Poppins",sans-serif;
+            background:
+                radial-gradient(circle at 15% 10%,rgba(0,91,114,.26),transparent 30%),
+                linear-gradient(135deg,#edf1f3,#ced9de);
+        }
 
-    --border:#e4e8e3;
-}
+        /* =====================================================
+           CARD
+        ===================================================== */
+        .profile-card{
+            width:100%;
+            max-width:405px;
+            min-height:755px;
+            position:relative;
+            overflow:hidden;
+            background:var(--white);
+            border-radius:7px;
+            box-shadow:
+                0 26px 60px rgba(2,29,42,.28),
+                0 4px 13px rgba(2,29,42,.12);
+        }
 
-body{
-    margin:0;
-    min-height:100vh;
-    font-family:'Inter','Plus Jakarta Sans',sans-serif;
-    background:
-        radial-gradient(circle at 20% 15%, rgba(200,168,78,.14), transparent 35%),
-        linear-gradient(135deg,#04291f,#073b2d 55%,#0a5140);
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    padding:22px 12px 40px;
-    overflow-x:hidden;
-}
+        /* =====================================================
+           TOP POSTER SECTION
+        ===================================================== */
+        .poster-top{
+            height:255px;
+            position:relative;
+            overflow:hidden;
+            background:
+                linear-gradient(135deg,rgba(0,31,46,.91),rgba(0,85,107,.86)),
+                url("https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=1000&q=80");
+            background-position:center;
+            background-size:cover;
+        }
 
-/* =====================================================
-   MAIN CARD
-===================================================== */
-.profile-card{
-    width:100%;
-    max-width:430px;
-    background:var(--cream);
-    border-radius:28px;
-    overflow:hidden;
-    position:relative;
-    box-shadow:
-        0 30px 70px rgba(0,0,0,.38),
-        0 0 0 1px rgba(255,255,255,.06);
-    animation:fadeUp .7s ease both;
-}
+        /* Dark teal overlay */
+        .poster-top::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:
+                linear-gradient(135deg,rgba(1,28,42,.86),rgba(0,74,95,.68)),
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(255,255,255,.025) 0,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px,
+                    transparent 14px
+                );
+        }
 
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(18px)}
-    to{opacity:1;transform:translateY(0)}
-}
+        /* Poster-style white sweeping curve */
+        .poster-top::after{
+            content:"";
+            position:absolute;
+            z-index:2;
+            width:570px;
+            height:235px;
+            left:-125px;
+            bottom:-175px;
+            background:var(--white);
+            border-radius:50%;
+            transform:rotate(-6deg);
+        }
 
-/* =====================================================
-   HEADER
-===================================================== */
-.header{
-    height:295px;
-    position:relative;
-    text-align:center;
-    color:#fff;
-    padding:24px 16px 0;
-    background:
-        radial-gradient(circle at 80% 0%, rgba(233,213,139,.14), transparent 40%),
-        linear-gradient(135deg,#042b20 0%,#073b2d 55%,#0a5140 100%);
-    overflow:visible;
-}
+        /* Decorative circular ring */
+        .top-circle{
+            position:absolute;
+            z-index:2;
+            width:230px;
+            height:230px;
+            right:-125px;
+            top:-120px;
+            border-radius:50%;
+            border:1px solid rgba(255,255,255,.14);
+        }
 
-.header::before,
-.header::after{
-    content:"";
-    position:absolute;
-    border-radius:50%;
-    border:1px solid rgba(233,213,139,.13);
-}
+        .top-circle::after{
+            content:"";
+            position:absolute;
+            width:172px;
+            height:172px;
+            top:28px;
+            left:28px;
+            border-radius:50%;
+            border:1px solid rgba(255,255,255,.08);
+        }
 
-.header::before{
-    width:270px;
-    height:270px;
-    right:-135px;
-    top:-150px;
-}
+        .top-badge{
+            position:relative;
+            z-index:5;
+            display:inline-flex;
+            align-items:center;
+            gap:7px;
+            margin:19px 18px;
+            padding:7px 12px;
+            border:1px solid rgba(255,255,255,.24);
+            border-radius:30px;
+            color:#edfaff;
+            background:rgba(0,0,0,.13);
+            font-size:8.5px;
+            font-weight:700;
+            letter-spacing:1.4px;
+            text-transform:uppercase;
+        }
 
-.header::after{
-    width:200px;
-    height:200px;
-    left:-110px;
-    bottom:-115px;
-    border-color:rgba(233,213,139,.10);
-}
+        .top-badge i{
+            color:#d5b45f;
+        }
 
-.top-line{
-    position:absolute;
-    left:12%;
-    right:12%;
-    top:12px;
-    height:1px;
-    background:linear-gradient(90deg,transparent,rgba(233,213,139,.6),transparent);
-}
+        /* =====================================================
+           PHOTO
+        ===================================================== */
+        .photo-area{
+            position:absolute;
+            z-index:20;
+            top:179px;
+            left:50%;
+            transform:translateX(-50%);
+        }
 
-/* =====================================================
-   BADGE + TITLE
-===================================================== */
-.badge{
-    position:relative;
-    z-index:5;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:7px 16px;
-    border:1px solid rgba(233,213,139,.45);
-    border-radius:30px;
-    color:var(--gold-light);
-    font-size:10.5px;
-    font-weight:700;
-    letter-spacing:.4px;
-    background:rgba(255,255,255,.04);
-    backdrop-filter:blur(4px);
-}
+        .photo-frame{
+            width:132px;
+            height:132px;
+            padding:5px;
+            border-radius:50%;
+            background:#fff;
+            box-shadow:
+                0 11px 25px rgba(0,0,0,.28),
+                0 0 0 5px rgba(255,255,255,.15);
+        }
 
-.header-title{
-    position:relative;
-    z-index:5;
-    margin-top:15px;
-    font-size:19px;
-    font-weight:800;
-    letter-spacing:.2px;
-}
+        .photo{
+            display:block;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:50%;
+            border:2px solid #dbe4e7;
+        }
 
-.header-subtitle{
-    position:relative;
-    z-index:5;
-    margin-top:4px;
-    font-size:10.5px;
-    color:#d7e3de;
-    letter-spacing:.5px;
-    text-transform:uppercase;
-}
+        /* =====================================================
+           IDENTITY
+        ===================================================== */
+        .identity{
+            position:relative;
+            z-index:4;
+            padding:82px 20px 18px;
+            text-align:center;
+            background:#fff;
+        }
 
-/* =====================================================
-   PHOTO
-===================================================== */
-.photo-area{
-    position:absolute;
-    left:50%;
-    bottom:-66px;
-    transform:translateX(-50%);
-    z-index:20;
-}
+        .name{
+            color:#2a2322;
+            font-family:"Montserrat",sans-serif;
+            font-size:23px;
+            font-weight:800;
+            line-height:1.25;
+            letter-spacing:.2px;
+            text-transform:uppercase;
+        }
 
-.photo-frame{
-    width:142px;
-    height:142px;
-    padding:5px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#f1dda0,#c8a84e,#96751d);
-    box-shadow:
-        0 14px 34px rgba(0,0,0,.32),
-        0 0 0 6px rgba(255,255,255,.05);
-}
+        .programme{
+            margin-top:6px;
+            color:var(--teal);
+            font-size:9px;
+            font-weight:800;
+            letter-spacing:2px;
+            text-transform:uppercase;
+        }
 
-.photo-inner{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    padding:4px;
-    background:var(--forest);
-}
+        .father{
+            margin-top:9px;
+            color:var(--muted);
+            font-size:10.5px;
+            font-weight:500;
+        }
 
-.photo{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    object-fit:cover;
-    display:block;
-    border:2px solid #fffdf5;
-}
+        .academic-year{
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            margin-top:12px;
+            padding:6px 11px;
+            color:var(--teal-dark);
+            background:#eff6f7;
+            border:1px solid #dce9eb;
+            border-radius:20px;
+            font-size:9px;
+            font-weight:700;
+        }
 
-/* =====================================================
-   IDENTITY
-===================================================== */
-.identity{
-    position:relative;
-    text-align:center;
-    padding:86px 18px 22px;
-    background:var(--cream);
-}
+        .academic-year i{
+            color:var(--gold);
+        }
 
-.name{
-    color:var(--forest);
-    font-size:27px;
-    line-height:1.3;
-    font-weight:800;
-    letter-spacing:-.2px;
-}
+        /* =====================================================
+           PERSONAL DETAILS
+        ===================================================== */
+        .details-section{
+            position:relative;
+            z-index:5;
+            padding:14px 20px 21px;
+            background:#fff;
+        }
 
-.father{
-    margin-top:5px;
-    color:var(--muted);
-    font-size:13px;
-}
+        .details-title{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:7px;
+            margin-bottom:12px;
+            color:var(--navy);
+            font-family:"Montserrat",sans-serif;
+            font-size:10px;
+            font-weight:800;
+            letter-spacing:1.3px;
+            text-transform:uppercase;
+        }
 
-.student-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    margin-top:12px;
-    padding:7px 15px;
-    border-radius:30px;
-    color:var(--forest);
-    background:#eef6f2;
-    border:1px solid #dcebe4;
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:.3px;
-}
+        .details-title::before,
+        .details-title::after{
+            content:"";
+            width:28px;
+            height:1px;
+            background:#cfdcdf;
+        }
 
-.student-tag i{
-    color:var(--gold);
-    font-size:13px;
-}
+        .details-title i{
+            color:var(--gold);
+            font-size:12px;
+        }
 
-/* =====================================================
-   SECTION TITLE
-===================================================== */
-.info-section{
-    padding:4px 18px 20px;
-}
+        .info-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:8px;
+        }
 
-.section-title{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:2px 2px 12px;
-    color:var(--forest);
-    font-size:15px;
-    font-weight:800;
-}
+        .info-box{
+            min-height:57px;
+            padding:9px 10px;
+            position:relative;
+            overflow:hidden;
+            border-radius:4px;
+            border:1px solid #edf0f1;
+            background:#fafcfc;
+        }
 
-.section-icon{
-    width:31px;
-    height:31px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:10px;
-    color:var(--gold);
-    background:#eef6f2;
-    border:1px solid #dcebe4;
-}
+        .info-box::before{
+            content:"";
+            position:absolute;
+            width:3px;
+            top:0;
+            left:0;
+            bottom:0;
+            background:var(--teal);
+        }
 
-/* =====================================================
-   INFORMATION
-===================================================== */
-.info-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
+        .info-label{
+            color:#99a4a8;
+            font-size:7.5px;
+            font-weight:800;
+            letter-spacing:1px;
+            text-transform:uppercase;
+        }
 
-.info-box{
-    min-height:78px;
-    padding:13px 14px;
-    border-radius:17px;
-    background:linear-gradient(145deg,#fafbf9,#f4f6f2);
-    border:1px solid var(--border);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    transition:.25s ease;
-}
+        .info-value{
+            margin-top:4px;
+            color:var(--text);
+            font-size:10.5px;
+            font-weight:700;
+            line-height:1.35;
+            overflow-wrap:anywhere;
+            word-break:break-word;
+        }
 
-.info-box:hover{
-    transform:translateY(-2px);
-    border-color:#cfd9d3;
-    box-shadow:0 8px 18px rgba(7,59,45,.07);
-}
+        .blood{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            min-width:35px;
+            padding:3px 9px;
+            border-radius:15px;
+            background:#b9222d;
+            color:#fff;
+            font-size:10px;
+            font-weight:800;
+        }
 
-.info-label{
-    color:#929a96;
-    font-size:9.5px;
-    font-weight:600;
-    letter-spacing:.6px;
-    text-transform:uppercase;
-    margin-bottom:6px;
-}
+        /* =====================================================
+           BOTTOM TEAL POSTER SECTION
+        ===================================================== */
+        .bottom-section{
+            position:relative;
+            min-height:217px;
+            padding:76px 20px 20px;
+            overflow:hidden;
+            background:
+                linear-gradient(135deg,#00647d 0%,#00455b 100%);
+        }
 
-.info-value{
-    color:var(--text);
-    font-size:13.5px;
-    font-weight:700;
-    line-height:1.45;
-    overflow-wrap:anywhere;
-    word-break:break-word;
-}
+        /* Large white upper curve */
+        .bottom-section::before{
+            content:"";
+            position:absolute;
+            z-index:1;
+            width:620px;
+            height:177px;
+            top:-112px;
+            left:-135px;
+            border-radius:50%;
+            background:#fff;
+            transform:rotate(-7deg);
+        }
 
-/* Blood */
-.blood-box{
-    background:#fff8f8;
-    border-color:#efdada;
-}
+        /* Teal graphic circle */
+        .bottom-section::after{
+            content:"";
+            position:absolute;
+            z-index:0;
+            width:235px;
+            height:235px;
+            right:-125px;
+            bottom:-105px;
+            border-radius:50%;
+            border:1px solid rgba(255,255,255,.13);
+        }
 
-.blood{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-width:48px;
-    padding:4px 13px;
-    border-radius:30px;
-    background:#b51e29;
-    color:#fff;
-    font-size:13px;
-    font-weight:800;
-    letter-spacing:.5px;
-}
+        .contact-label{
+            position:relative;
+            z-index:3;
+            color:rgba(255,255,255,.92);
+            text-align:right;
+            font-size:8px;
+            font-weight:700;
+            letter-spacing:1.1px;
+            text-transform:uppercase;
+        }
 
-/* =====================================================
-   CONTACT
-===================================================== */
-.contact{
-    padding:2px 18px 24px;
-}
+        .contact-label span{
+            display:block;
+            margin-top:3px;
+            color:rgba(255,255,255,.68);
+            font-size:7px;
+            letter-spacing:.6px;
+        }
 
-.contact-title{
-    color:var(--forest);
-    font-size:15px;
-    font-weight:800;
-    margin:2px 2px 12px;
-}
+        /* =====================================================
+           DIAGONAL FLOATING ICONS
+        ===================================================== */
+        .floating-icons{
+            position:absolute;
+            z-index:12;
+            top:-35px;
+            left:23px;
+            width:250px;
+            height:155px;
+        }
 
-.buttons{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
+        .social-btn{
+            position:absolute;
+            width:47px;
+            height:47px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:50%;
+            color:#fff;
+            text-decoration:none;
+            border:2px solid rgba(255,255,255,.23);
+            box-shadow:
+                0 7px 12px rgba(0,0,0,.24),
+                inset 0 1px 0 rgba(255,255,255,.18);
+            font-size:17px;
+            transition:.2s ease;
+        }
 
-.btn{
-    min-height:46px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    border-radius:14px;
-    text-decoration:none;
-    color:#fff;
-    font-size:11.5px;
-    font-weight:700;
-    letter-spacing:.2px;
-    box-shadow:0 6px 14px rgba(0,0,0,.10);
-    transition:.22s ease;
-}
+        .social-btn:hover{
+            z-index:30;
+            transform:translateY(-4px) scale(1.08);
+        }
 
-.btn:hover{
-    transform:translateY(-2px);
-    filter:brightness(1.06);
-}
+        /* Positioning follows the sample poster's diagonal style */
+        .social-btn:nth-child(1){
+            left:0;
+            top:77px;
+        }
 
-.btn i{
-    font-size:15px;
-}
+        .social-btn:nth-child(2){
+            left:42px;
+            top:46px;
+        }
 
-.call{
-    background:linear-gradient(135deg,#073b2d,#0a6048);
-}
+        .social-btn:nth-child(3){
+            left:85px;
+            top:21px;
+        }
 
-.facebook{
-    background:linear-gradient(135deg,#1877f2,#0866df);
-}
+        .social-btn:nth-child(4){
+            left:130px;
+            top:48px;
+        }
 
-.whatsapp{
-    background:linear-gradient(135deg,#20c967,#15a957);
-}
+        .social-btn:nth-child(5){
+            left:172px;
+            top:23px;
+        }
 
-.gmail{
-    background:linear-gradient(135deg,#ea4335,#d93025);
-}
+        .social-btn:nth-child(6){
+            left:207px;
+            top:1px;
+        }
 
-.telegram{
-    background:linear-gradient(135deg,#229ed9,#168dcc);
-}
+        .call{
+            background:#536169;
+        }
 
-.instagram{
-    background:linear-gradient(135deg,#833ab4,#fd1d1d 55%,#fcb045);
-}
+        .facebook{
+            background:#1877f2;
+        }
 
-/* =====================================================
-   FOOTER
-===================================================== */
-.footer{
-    border-top:1px solid #eceeea;
-    padding:15px 12px 18px;
-    text-align:center;
-    color:#9ba39f;
-    font-size:9.5px;
-    letter-spacing:.4px;
-}
+        .whatsapp{
+            background:#c49b35;
+        }
 
-.footer strong{
-    color:var(--forest);
-    font-weight:800;
-}
+        .gmail{
+            background:#515d63;
+        }
 
-/* =====================================================
-   MOBILE
-===================================================== */
-@media(max-width:380px){
-    body{
-        padding:12px 8px 28px;
-    }
+        .telegram{
+            background:#1f9bd4;
+        }
 
-    .profile-card{
-        border-radius:24px;
-    }
+        .instagram{
+            background:linear-gradient(135deg,#803ab5,#ef2b65 60%,#f7a542);
+        }
 
-    .header{
-        height:278px;
-    }
+        .interaction-note{
+            position:relative;
+            z-index:4;
+            margin-top:60px;
+            color:rgba(255,255,255,.83);
+            text-align:center;
+            font-size:8px;
+            font-weight:600;
+            letter-spacing:.4px;
+            text-transform:uppercase;
+        }
 
-    .photo-frame{
-        width:132px;
-        height:132px;
-    }
+        .footer{
+            position:relative;
+            z-index:4;
+            margin-top:10px;
+            color:rgba(255,255,255,.7);
+            text-align:center;
+            font-size:8px;
+            letter-spacing:.8px;
+        }
 
-    .photo-area{
-        bottom:-62px;
-    }
+        .footer strong{
+            color:#fff;
+            font-weight:800;
+        }
 
-    .identity{
-        padding-top:80px;
-    }
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+        @media(max-width:350px){
+            body{
+                padding:0;
+            }
 
-    .name{
-        font-size:25px;
-    }
-}
+            .profile-card{
+                border-radius:0;
+                min-height:100vh;
+            }
 
-@media(max-width:330px){
-    .header{
-        height:260px;
-    }
+            .info-grid{
+                grid-template-columns:1fr;
+            }
 
-    .photo-frame{
-        width:122px;
-        height:122px;
-    }
+            .bottom-section{
+                min-height:235px;
+            }
 
-    .photo-area{
-        bottom:-58px;
-    }
+            .floating-icons{
+                transform:scale(.88);
+                transform-origin:left top;
+                left:12px;
+            }
 
-    .identity{
-        padding-top:74px;
-    }
-
-    .info-grid,
-    .buttons{
-        grid-template-columns:1fr;
-    }
-}
-</style>
+            .name{
+                font-size:20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="profile-card">
+    <main class="profile-card">
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="top-line"></div>
+        <!-- =============================================
+             TOP DARK SECTION
+        ============================================== -->
+        <section class="poster-top">
+            <div class="top-circle"></div>
 
-        <div class="badge">
-            <i class="fa-solid fa-calendar-days"></i>
-            1447–48 AH &nbsp;•&nbsp; 2026–2027
-        </div>
+            <div class="top-badge">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Graduating Student Profile
+            </div>
+        </section>
 
-        <div class="header-title">
-            Takmil Fil Hadith
-        </div>
-
-        <div class="header-subtitle">
-            Graduating Student Profile
-        </div>
-
+        <!-- =============================================
+             PROFILE IMAGE
+        ============================================== -->
         <div class="photo-area">
             <div class="photo-frame">
-                <div class="photo-inner">
-                    <img
-                        class="photo"
-                        src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY"
-                        alt="Hasibul Hoque"
-                    >
+                <img
+                    class="photo"
+                    src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY"
+                    alt="Hasibul Hoque"
+                >
+            </div>
+        </div>
+
+        <!-- =============================================
+             IDENTITY
+        ============================================== -->
+        <section class="identity">
+            <h1 class="name">Hasibul Hoque</h1>
+
+            <div class="programme">
+                Takmil Fil Hadith
+            </div>
+
+            <div class="father">
+                Father: Mobinul Hoque
+            </div>
+
+            <div class="academic-year">
+                <i class="fa-solid fa-calendar-days"></i>
+                1447–48 AH • 2026–2027
+            </div>
+        </section>
+
+        <!-- =============================================
+             PERSONAL INFORMATION
+        ============================================== -->
+        <section class="details-section">
+            <div class="details-title">
+                <i class="fa-solid fa-id-card"></i>
+                Personal Details
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <div class="info-label">Village</div>
+                    <div class="info-value">Naddapara</div>
                 </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- IDENTITY -->
-    <section class="identity">
-        <h1 class="name">Hasibul Hoque</h1>
-
-        <div class="father">
-            Father: Mobinul Hoque
-        </div>
-
-        <div class="student-tag">
-            <i class="fa-solid fa-graduation-cap"></i>
-            Graduating Student
-        </div>
-    </section>
-
-    <!-- PERSONAL INFORMATION -->
-    <section class="info-section">
-        <div class="section-title">
-            <span class="section-icon">
-                <i class="fa-solid fa-table-cells"></i>
-            </span>
-            Personal Information
-        </div>
-
-        <div class="info-grid">
-            <div class="info-box">
-                <div class="info-label">Village</div>
-                <div class="info-value">Naddapara</div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-label">Police Station</div>
-                <div class="info-value">Dakshinkhan</div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-label">District</div>
-                <div class="info-value">Dhaka</div>
-            </div>
-
-            <div class="info-box blood-box">
-                <div class="info-label">Blood Group</div>
-                <div class="info-value">
-                    <span class="blood">O+</span>
+                <div class="info-box">
+                    <div class="info-label">Police Station</div>
+                    <div class="info-value">Dakshinkhan</div>
                 </div>
+
+                <div class="info-box">
+                    <div class="info-label">District</div>
+                    <div class="info-value">Dhaka</div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-label">Blood Group</div>
+                    <div class="info-value">
+                        <span class="blood">O+</span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-label">Mobile</div>
+                    <div class="info-value">01930216833</div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-label">Gmail</div>
+                    <div class="info-value">
+                        hasibulhoque3335@gmail.com
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =============================================
+             BOTTOM CONTACT PANEL
+        ============================================== -->
+        <section class="bottom-section">
+
+            <div class="floating-icons">
+
+                <a
+                    class="social-btn call"
+                    href="tel:01930216833"
+                    aria-label="Call Hasibul Hoque"
+                >
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+
+                <a
+                    class="social-btn facebook"
+                    href="https://www.facebook.com/hasibulhoque3335"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                    class="social-btn whatsapp"
+                    href="https://wa.me/8801930216833"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a
+                    class="social-btn gmail"
+                    href="mailto:hasibulhoque3335@gmail.com"
+                    aria-label="Gmail"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <a
+                    class="social-btn telegram"
+                    href="https://t.me/hasibulhoque3335"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Telegram"
+                >
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+
+                <a
+                    class="social-btn instagram"
+                    href="https://www.instagram.com/hasibulhoque3335?igsi=MWZtYzJic2RmbDcyNg=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
             </div>
 
-            <div class="info-box">
-                <div class="info-label">Mobile</div>
-                <div class="info-value">01930216833</div>
+            <div class="contact-label">
+                Student Contact Directory
+                <span>Call, email, or connect through social media</span>
             </div>
 
-            <div class="info-box">
-                <div class="info-label">Gmail</div>
-                <div class="info-value">hasibulhoque3335@gmail.com</div>
+            <div class="interaction-note">
+                Click the icons to interact
             </div>
-        </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section class="contact">
-        <div class="contact-title">Contact</div>
+            <div class="footer">
+                <strong>Serial No. 50</strong>
+                &nbsp; • &nbsp;
+                ID Card QR Directory
+            </div>
 
-        <div class="buttons">
-            <a class="btn call" href="tel:01930216833">
-                <i class="fa-solid fa-phone"></i>
-                Call
-            </a>
+        </section>
 
-            <a class="btn facebook" href="https://www.facebook.com/hasibulhoque3335" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-facebook-f"></i>
-                Facebook
-            </a>
-
-            <a class="btn whatsapp" href="https://wa.me/8801930216833" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp"></i>
-                WhatsApp
-            </a>
-
-            <a class="btn gmail" href="mailto:hasibulhoque3335@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-                Gmail
-            </a>
-
-            <a class="btn telegram" href="https://t.me/hasibulhoque3335" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-telegram"></i>
-                Telegram
-            </a>
-
-            <a class="btn instagram" href="https://www.instagram.com/hasibulhoque3335?igsi=MWZtYzJic2RmbDcyNg==" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-instagram"></i>
-                Instagram
-            </a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <strong>Serial No. 50</strong>
-        &nbsp; • &nbsp;
-        ID Card QR Directory
-    </footer>
-
-</div>
+    </main>
 
 </body>
 </html>
