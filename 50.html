@@ -1,446 +1,1205 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>হাসিবুল হক </title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<!DOCTYPE html>  <html lang="bn">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>হাসিবুল হক </title>  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <link rel="stylesheet"  
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  <style>  
+  
+/* =====================================================  
+   BASIC  
+===================================================== */  
+  
+*{  
+    margin:0;  
+    padding:0;  
+    box-sizing:border-box;  
+}  
+  
+:root{  
+    --forest:#073b2d;  
+    --forest-dark:#04291f;  
+    --forest-light:#0b6048;  
+  
+    --gold:#c8a84e;  
+    --gold-light:#e9d58b;  
+  
+    --cream:#fffdf8;  
+    --soft:#f6f7f3;  
+  
+    --text:#17241f;  
+    --muted:#858e89;  
+  
+    --border:#e4e8e3;  
+}  
+  
+body{  
+  
+    margin:0;  
+    min-height:100vh;  
+  
+    font-family:  
+        'Noto Sans Bengali',  
+        sans-serif;  
+  
+    background:  
+  
+        linear-gradient(  
+            135deg,  
+            #06271e,  
+            #0a4937  
+        );  
+  
+    display:flex;  
+  
+    justify-content:center;  
+  
+    align-items:flex-start;  
+  
+    padding:  
+        18px 10px 35px;  
+  
+    overflow-x:hidden;  
+}  
+  
+  
+/* =====================================================  
+   MAIN CARD  
+===================================================== */  
+  
+.profile-card{  
+  
+    width:100%;  
+  
+    max-width:430px;  
+  
+    background:var(--cream);  
+  
+    border-radius:26px;  
+  
+    overflow:hidden;  
+  
+    position:relative;  
+  
+    box-shadow:  
+        0 25px 60px rgba(0,0,0,.35);  
+}  
+  
+  
+/* =====================================================  
+   HEADER — SHORT & COMPACT  
+===================================================== */  
+  
+.header{  
+  
+    height:285px;  
+  
+    position:relative;  
+  
+    text-align:center;  
+  
+    color:#fff;  
+  
+    padding:  
+        22px 15px 0;  
+  
+    background:  
+  
+        linear-gradient(  
+            135deg,  
+            #042b20 0%,  
+            #073b2d 55%,  
+            #0a5140 100%  
+        );  
+  
+    overflow:visible;  
+}  
+  
+  
+/* subtle light */  
+  
+.header::before{  
+  
+    content:"";  
+  
+    position:absolute;  
+  
+    width:260px;  
+    height:260px;  
+  
+    border-radius:50%;  
+  
+    right:-130px;  
+    top:-145px;  
+  
+    border:  
+        1px solid  
+        rgba(233,213,139,.13);  
+}  
+  
+  
+/* second subtle curve */  
+  
+.header::after{  
+  
+    content:"";  
+  
+    position:absolute;  
+  
+    width:190px;  
+    height:190px;  
+  
+    border-radius:50%;  
+  
+    left:-105px;  
+    bottom:-110px;  
+  
+    border:  
+        1px solid  
+        rgba(233,213,139,.10);  
+}  
+  
+  
+/* =====================================================  
+   SMALL GOLD TOP LINE  
+===================================================== */  
+  
+.top-line{  
+  
+    position:absolute;  
+  
+    left:12%;  
+    right:12%;  
+  
+    top:11px;  
+  
+    height:1px;  
+  
+    background:  
+  
+        linear-gradient(  
+            90deg,  
+            transparent,  
+            rgba(233,213,139,.55),  
+            transparent  
+        );  
+}  
+  
+  
+/* =====================================================  
+   YEAR  
+===================================================== */  
+  
+.badge{  
+  
+    position:relative;  
+  
+    z-index:5;  
+  
+    display:inline-block;  
+  
+    padding:  
+        6px 15px;  
+  
+    border:  
+        1px solid  
+        rgba(233,213,139,.5);  
+  
+    border-radius:30px;  
+  
+    color:var(--gold-light);  
+  
+    font-size:10.5px;  
+  
+    font-weight:600;  
+  
+    background:  
+        rgba(255,255,255,.035);  
+}  
+  
+  
+/* =====================================================  
+   HEADER TITLE  
+===================================================== */  
+  
+.header-title{  
+  
+    position:relative;  
+  
+    z-index:5;  
+  
+    margin-top:13px;  
+  
+    font-size:18px;  
+  
+    font-weight:800;  
+}  
+  
+  
+.header-subtitle{  
+  
+    position:relative;  
+  
+    z-index:5;  
+  
+    margin-top:3px;  
+  
+    font-size:10.5px;  
+  
+    color:#d7e3de;  
+}  
+  
+  
+/* =====================================================  
+   PHOTO  
+===================================================== */  
+  
+.photo-area{  
+  
+    position:absolute;  
+  
+    left:50%;  
+  
+    bottom:-64px;  
+  
+    transform:translateX(-50%);  
+  
+    z-index:20;  
+}  
+  
+  
+/*  
+   Only TWO rings.  
+   Clean and premium.  
+*/  
+  
+.photo-frame{  
+  
+    width:138px;  
+    height:138px;  
+  
+    padding:5px;  
+  
+    border-radius:50%;  
+  
+    background:  
+  
+        linear-gradient(  
+            135deg,  
+            #f1dda0,  
+            #c8a84e,  
+            #96751d  
+        );  
+  
+    box-shadow:  
+  
+        0 12px 30px  
+        rgba(0,0,0,.30);  
+}  
+  
+  
+.photo-inner{  
+  
+    width:100%;  
+    height:100%;  
+  
+    border-radius:50%;  
+  
+    padding:4px;  
+  
+    background:var(--forest);  
+}  
+  
+  
+.photo{  
+  
+    width:100%;  
+    height:100%;  
+  
+    border-radius:50%;  
+  
+    object-fit:cover;  
+  
+    display:block;  
+  
+    border:  
+        2px solid  
+        #fffdf5;  
+}  
+  
+  
+/* =====================================================  
+   IDENTITY  
+===================================================== */  
+  
+.identity{  
+  
+    position:relative;  
+  
+    text-align:center;  
+  
+    padding:  
+        82px 18px 21px;  
+  
+    background:var(--cream);  
+}  
+  
+  
+.name{  
+  
+    color:var(--forest);  
+  
+    font-size:27px;  
+  
+    line-height:1.3;  
+  
+    font-weight:800;  
+}  
+  
+  
+.father{  
+  
+    margin-top:5px;  
+  
+    color:var(--muted);  
+  
+    font-size:13.5px;  
+}  
+  
+  
+/* student badge */  
+  
+.student-tag{  
+  
+    display:inline-flex;  
+  
+    align-items:center;  
+  
+    gap:7px;  
+  
+    margin-top:11px;  
+  
+    padding:  
+        6px 14px;  
+  
+    border-radius:30px;  
+  
+    color:var(--forest);  
+  
+    background:#eef6f2;  
+  
+    border:  
+        1px solid #dcebe4;  
+  
+    font-size:11px;  
+  
+    font-weight:700;  
+}  
+  
+  
+.student-tag i{  
+  
+    color:var(--gold);  
+  
+    font-size:13px;  
+}  
+  
+  
+/* =====================================================  
+   SECTION TITLE  
+===================================================== */  
+  
+.info-section{  
+  
+    padding:  
+        3px 18px 20px;  
+}  
+  
+  
+.section-title{  
+  
+    display:flex;  
+  
+    align-items:center;  
+  
+    gap:9px;  
+  
+    margin:  
+        2px 2px 12px;  
+  
+    color:var(--forest);  
+  
+    font-size:15px;  
+  
+    font-weight:800;  
+}  
+  
+  
+.section-icon{  
+  
+    width:30px;  
+    height:30px;  
+  
+    display:flex;  
+  
+    justify-content:center;  
+  
+    align-items:center;  
+  
+    border-radius:9px;  
+  
+    color:var(--gold);  
+  
+    background:#eef6f2;  
+  
+    border:  
+        1px solid #dcebe4;  
+}  
+  
+  
+/* =====================================================  
+   INFORMATION  
+===================================================== */  
+  
+.info-grid{  
+  
+    display:grid;  
+  
+    grid-template-columns:  
+        1fr 1fr;  
+  
+    gap:9px;  
+}  
+  
+  
+.info-box{  
+  
+    min-height:76px;  
+  
+    padding:  
+        12px 13px;  
+  
+    border-radius:16px;  
+  
+    background:  
+        linear-gradient(  
+            145deg,  
+            #fafbf9,  
+            #f5f6f3  
+        );  
+  
+    border:  
+        1px solid  
+        var(--border);  
+  
+    display:flex;  
+  
+    flex-direction:column;  
+  
+    justify-content:center;  
+}  
+  
+  
+.info-label{  
+  
+    color:#929a96;  
+  
+    font-size:9.5px;  
+  
+    margin-bottom:5px;  
+}  
+  
+  
+.info-value{  
+  
+    color:var(--text);  
+  
+    font-size:13.5px;  
+  
+    font-weight:700;  
+  
+    line-height:1.45;  
+  
+    overflow-wrap:anywhere;  
+  
+    word-break:break-word;  
+}  
+  
+  
+/* blood */  
+  
+.blood-box{  
+  
+    background:#fff8f8;  
+  
+    border-color:#efdada;  
+}  
+  
+  
+.blood{  
+  
+    display:inline-flex;  
+  
+    align-items:center;  
+  
+    justify-content:center;  
+  
+    min-width:46px;  
+  
+    padding:  
+        4px 12px;  
+  
+    border-radius:30px;  
+  
+    background:#b51e29;  
+  
+    color:#fff;  
+  
+    font-size:13px;  
+  
+    font-weight:800;  
+}  
+  
+  
+/* =====================================================  
+   CONTACT  
+===================================================== */  
+  
+.contact{  
+  
+    padding:  
+        2px 18px 22px;  
+}  
+  
+  
+.contact-title{  
+  
+    color:var(--forest);  
+  
+    font-size:15px;  
+  
+    font-weight:800;  
+  
+    margin:  
+        2px 2px 11px;  
+}  
+  
+  
+.buttons{  
+  
+    display:grid;  
+  
+    grid-template-columns:  
+        1fr 1fr;  
+  
+    gap:9px;  
+}  
+  
+  
+.btn{  
+  
+    min-height:45px;  
+  
+    display:flex;  
+  
+    align-items:center;  
+  
+    justify-content:center;  
+  
+    gap:7px;  
+  
+    border-radius:13px;  
+  
+    text-decoration:none;  
+  
+    color:#fff;  
+  
+    font-size:11.5px;  
+  
+    font-weight:700;  
+  
+    box-shadow:  
+        0 5px 12px  
+        rgba(0,0,0,.09);  
+  
+    transition:.2s;  
+}  
+  
+  
+.btn:hover{  
+  
+    transform:translateY(-2px);  
+}  
+  
+  
+.btn i{  
+  
+    font-size:15px;  
+}  
+  
+  
+/* Call */  
+  
+.call{  
+  
+    background:  
+        linear-gradient(  
+            135deg,  
+            #073b2d,  
+            #0a6048  
+        );  
+}  
+  
+  
+/* Facebook */  
+  
+.facebook{  
+  
+    background:  
+        linear-gradient(  
+            135deg,  
+            #1877f2,  
+            #0866df  
+        );  
+}  
+  
+  
+/* WhatsApp */  
+  
+.whatsapp{  
+  
+    background:  
+        linear-gradient(  
+            135deg,  
+            #20c967,  
+            #15a957  
+        );  
+}  
+  
+  
+/* Gmail */  
+  
+.gmail{  
+  
+    background:  
+        linear-gradient(  
+            135deg,  
+            #ea4335,  
+            #d93025  
+        );  
+}  
+  
+  
+/* Telegram */  
+  
+.telegram{  
+  
+    background:  
+        linear-gradient(  
+            135deg,  
+            #229ed9,  
+            #168dcc  
+        );  
+}  
+  
+  
+/* Instagram */  
+  
+.instagram{  
+  
+    background:  
+        linear-gradient(  
+            135deg,  
+            #833ab4,  
+            #fd1d1d 55%,  
+            #fcb045  
+        );  
+}  
+  
+  
+/* =====================================================  
+   FOOTER  
+===================================================== */  
+  
+.footer{  
+  
+    border-top:  
+        1px solid  
+        #eceeea;  
+  
+    padding:  
+        14px 12px 17px;  
+  
+    text-align:center;  
+  
+    color:#9ba39f;  
+  
+    font-size:9.5px;  
+}  
+  
+  
+.footer strong{  
+  
+    color:var(--forest);  
+  
+    font-weight:800;  
+}  
+  
+  
+/* =====================================================  
+   MOBILE  
+===================================================== */  
+  
+@media(max-width:380px){  
+  
+    body{  
+  
+        padding:  
+            10px 7px 25px;  
+    }  
+  
+  
+    .profile-card{  
+  
+        border-radius:23px;  
+    }  
+  
+  
+    .header{  
+  
+        height:270px;  
+    }  
+  
+  
+    .photo-frame{  
+  
+        width:130px;  
+        height:130px;  
+    }  
+  
+  
+    .photo-area{  
+  
+        bottom:-60px;  
+    }  
+  
+  
+    .identity{  
+  
+        padding-top:78px;  
+    }  
+  
+  
+    .name{  
+  
+        font-size:25px;  
+    }  
+  
+}  
+  
+  
+@media(max-width:330px){  
+  
+    .header{  
+  
+        height:255px;  
+    }  
+  
+  
+    .photo-frame{  
+  
+        width:120px;  
+        height:120px;  
+    }  
+  
+  
+    .photo-area{  
+  
+        bottom:-56px;  
+    }  
+  
+  
+    .identity{  
+  
+        padding-top:72px;  
+    }  
+  
+  
+    .info-grid{  
+  
+        grid-template-columns:  
+            1fr;  
+    }  
+  
+  
+    .buttons{  
+  
+        grid-template-columns:  
+            1fr;  
+    }  
+  
+}  
+  
+</style>  </head>  <body>  <div class="profile-card">  <!-- =========================================  
+     HEADER  
+========================================== -->  
 
-:root{
-    --dark-blue:#0a2f4f;
-    --blue:#0f4c75;
-    --light-blue:#3282b8;
-    --gold:#c8a84e;
-    --gold-dark:#96751d;
-    --white:#ffffff;
-    --gray:#f0f4f8;
-    --text:#1a1a1a;
-}
+<header class="header">  
 
-body{
-    font-family:'Noto Sans Bengali','Poppins',sans-serif;
-    background:linear-gradient(135deg,#0a2f4f 0%,#0f4c75 100%);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px 10px;
-}
+    <div class="top-line"></div>  
 
-.card{
-    width:100%;
-    max-width:380px;
-    background:var(--white);
-    border-radius:0;
-    overflow:hidden;
-    box-shadow:0 30px 70px rgba(0,0,0,.4);
-    position:relative;
-}
 
-/* =====================================================
-   TOP SECTION - DARK BLUE WITH CURVE
-===================================================== */
-.top-section{
-    background:linear-gradient(135deg,var(--dark-blue) 0%,var(--blue) 100%);
-    padding:35px 25px 80px;
-    position:relative;
-    clip-path:ellipse(150% 100% at 50% 0%);
-}
+    <!-- Academic year -->  
 
-.top-section::before{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    background:radial-gradient(circle,rgba(50,130,184,.15),transparent);
-    border-radius:50%;
-    top:-150px;
-    right:-100px;
-}
+    <div class="badge">  
 
-.islamic-pattern{
-    position:absolute;
-    top:20px;
-    left:20px;
-    width:60px;
-    height:60px;
-    opacity:0.1;
-    background-image:url("data:image/svg+xml,[STRIPPED]);
-}
+        ১৪৪৭–৪৮ হিজরী  
+        &nbsp;•&nbsp;  
+        ২০২৬–২০২৭  
 
-.year-badge{
-    display:inline-block;
-    padding:5px 14px;
-    background:rgba(200,168,78,.15);
-    border:1px solid rgba(200,168,78,.4);
-    border-radius:20px;
-    color:var(--gold);
-    font-size:9px;
-    font-weight:700;
-    margin-bottom:15px;
-}
+    </div>  
 
-.photo-wrapper{
-    width:120px;
-    height:120px;
-    margin:0 auto;
-    position:relative;
-    z-index:10;
-}
 
-.photo-circle{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    padding:4px;
-    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-}
+    <div class="header-title">  
 
-.photo-inner{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    background:var(--white);
-    padding:3px;
-}
+        তাকমীল ফিল হাদিস  
 
-.photo-inner img{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    object-fit:cover;
-    display:block;
-}
+    </div>  
 
-/* =====================================================
-   NAME SECTION
-===================================================== */
-.name-section{
-    text-align:center;
-    padding:50px 25px 20px;
-    background:var(--white);
-    margin-top:-40px;
-}
 
-.name{
-    font-size:32px;
-    font-weight:900;
-    color:var(--gold-dark);
-    line-height:1.2;
-    margin-bottom:5px;
-    font-family:'Poppins','Noto Sans Bengali',sans-serif;
-}
+    <div class="header-subtitle">  
 
-.title{
-    font-size:12px;
-    font-weight:700;
-    color:var(--blue);
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
+        সমাপনী শিক্ষার্থী পরিচিতি  
 
-.father-name{
-    margin-top:8px;
-    font-size:13px;
-    color:#666;
-    font-weight:500;
-}
+    </div>  
 
-/* =====================================================
-   DIAGONAL SOCIAL ICONS
-===================================================== */
-.social-diagonal{
-    position:relative;
-    padding:30px 25px 40px;
-    background:linear-gradient(135deg,var(--gray) 0%,#e8f1f8 100%);
-    clip-path:polygon(0 0, 100% 15%, 100% 100%, 0 100%);
-    margin-top:-10px;
-}
 
-.diagonal-icons{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    align-items:flex-end;
-    padding-top:20px;
-}
+    <!-- =====================================  
+         PHOTO  
+    ====================================== -->  
 
-.social-btn{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    color:var(--white);
-    font-size:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
-    transition:all.3s;
-    position:relative;
-}
+    <div class="photo-area">  
 
-.social-btn:hover{
-    transform:translateX(-8px) scale(1.1);
-}
+        <div class="photo-frame">  
 
-.social-btn:nth-child(1){margin-right:0px;}
-.social-btn:nth-child(2){margin-right:35px;}
-.social-btn:nth-child(3){margin-right:70px;}
-.social-btn:nth-child(4){margin-right:105px;}
-.social-btn:nth-child(5){margin-right:140px;}
-.social-btn:nth-child(6){margin-right:175px;}
+            <div class="photo-inner">  
 
-.btn-phone{background:linear-gradient(135deg,#0a2f4f,#0f4c75);}
-.btn-whatsapp{background:linear-gradient(135deg,var(--gold),var(--gold-dark));}
-.btn-email{background:linear-gradient(135deg,#ea4335,#c5221f);}
-.btn-facebook{background:linear-gradient(135deg,#1877f2,#0866df);}
-.btn-instagram{background:linear-gradient(135deg,#833ab4,#fd1d1d 50%,#fcb045);}
-.btn-telegram{background:linear-gradient(135deg,#229ed9,#168dcc);}
+                <img  
 
-/* =====================================================
-   INFO SECTION
-===================================================== */
-.info-section{
-    background:linear-gradient(135deg,var(--blue) 0%,var(--dark-blue) 100%);
-    padding:25px 25px 30px;
-    color:var(--white);
-    clip-path:polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-    margin-top:-20px;
-}
+                    class="photo"  
 
-.info-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:30px;
-}
+                    src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY"  
 
-.info-item{
-    font-size:11px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-}
+                    alt="হাসিবুল হক"  
 
-.info-item strong{
-    display:block;
-    font-size:13px;
-    font-weight:700;
-    margin-top:3px;
-    color:var(--gold);
-}
+                >  
 
-/* =====================================================
-   QR SECTION
-===================================================== */
-.qr-section{
-    background:var(--white);
-    padding:25px;
-    text-align:center;
-}
+            </div>  
 
-.qr-title{
-    font-size:11px;
-    font-weight:800;
-    color:var(--blue);
-    margin-bottom:15px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
+        </div>  
 
-#qrcode{
-    display:inline-block;
-    padding:12px;
-    background:var(--white);
-    border:3px solid var(--gold);
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
-}
+    </div>  
 
-#qrcode img{
-    display:block;
-}
 
-.vcard-btn{
-    margin-top:15px;
-    width:100%;
-    padding:14px;
-    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
-    color:var(--white);
-    border:none;
-    border-radius:10px;
-    font-size:13px;
-    font-weight:800;
-    cursor:pointer;
-    font-family:'Noto Sans Bengali',sans-serif;
-    box-shadow:0 5px 15px rgba(200,168,78,.4);
-    transition:.3s;
-}
+</header>  
 
-.vcard-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(200,168,78,.5);
-}
 
-.vcard-btn i{
-    margin-right:8px;
-}
+<!-- =========================================  
+     IDENTITY  
+========================================== -->  
 
-/* =====================================================
-   FOOTER
-===================================================== */
-.footer{
-    background:var(--dark-blue);
-    padding:15px;
-    text-align:center;
-    color:var(--gold);
-    font-size:9px;
-    font-weight:700;
-    letter-spacing:1px;
-}
+<section class="identity">  
 
-/* =====================================================
-   MOBILE
-===================================================== */
-@media(max-width:400px){
-   .name{font-size:28px;}
-   .social-btn{width:45px;height:45px;font-size:18px;}
-   .social-btn:nth-child(2){margin-right:30px;}
-   .social-btn:nth-child(3){margin-right:60px;}
-   .social-btn:nth-child(4){margin-right:90px;}
-   .social-btn:nth-child(5){margin-right:120px;}
-   .social-btn:nth-child(6){margin-right:150px;}
-}
-</style>
-</head>
-<body>
-<div class="card">
-    <!-- TOP SECTION -->
-    <div class="top-section">
-        <div class="islamic-pattern"></div>
-        <div class="year-badge">১৪৪৭–৪৮ হিজরী • ২০২৬–২০২৭</div>
-        <div class="photo-wrapper">
-            <div class="photo-circle">
-                <div class="photo-inner">
-                    <img src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY" alt="হাসিবুল হক">
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- NAME SECTION -->
-    <div class="name-section">
-        <div class="name">হাসিবুল হক</div>
-        <div class="title">তাকমীল ফিল হাদিস</div>
-        <div class="father-name">পিতা: মুবিনুল হক</div>
-    </div>
+    <h1 class="name">  
 
-    <!-- DIAGONAL SOCIAL ICONS -->
-    <div class="social-diagonal">
-        <div class="diagonal-icons">
-            <a href="tel:01930216833" class="social-btn btn-phone" aria-label="Call">
-                <i class="fa-solid fa-phone"></i>
-            </a>
-            <a href="https://wa.me/8801930216833" target="_blank" class="social-btn btn-whatsapp" aria-label="WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="mailto:hasibulhoque3335@gmail.com" class="social-btn btn-email" aria-label="Email">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a href="https://www.facebook.com/hasibulhoque3335" target="_blank" class="social-btn btn-facebook" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/hasibulhoque3335" target="_blank" class="social-btn btn-instagram" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://t.me/hasibulhoque3335" target="_blank" class="social-btn btn-telegram" aria-label="Telegram">
-                <i class="fa-brands fa-telegram"></i>
-            </a>
-        </div>
-    </div>
+        হাসিবুল হক  
 
-    <!-- INFO SECTION -->
-    <div class="info-section">
-        <div class="info-grid">
-            <div class="info-item">
-                গ্রাম<strong>নদ্দাপাড়া</strong>
-            </div>
-            <div class="info-item">
-                থানা<strong>দক্ষিণখান</strong>
-            </div>
-            <div class="info-item">
-                জেলা<strong>ঢাকা</strong>
-            </div>
-            <div class="info-item">
-                রক্তের গ্রুপ<strong>O+ (POSITIVE)</strong>
-            </div>
-        </div>
-    </div>
+    </h1>  
 
-    <!-- QR SECTION -->
-    <div class="qr-section">
-        <div class="qr-title">
-            <i class="fa-solid fa-qrcode"></i> স্ক্যান করে কন্টাক্ট সেভ করুন
-        </div>
-        <div id="qrcode"></div>
-        <button class="vcard-btn" id="downloadVCard">
-            <i class="fa-solid fa-download"></i> vCard ডাউনলোড করুন
-        </button>
-    </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        ক্রমিক নং ৫০ • DIGITAL ID CARD
-    </div>
-</div>
+    <div class="father">  
 
-<script>
-// vCard ডাটা
-const vCardData = `BEGIN:VCARD
-VERSION:3.0
-FN:হাসিবুল হক
-N:হক;হাসিবুল;;;
-ORG:তাকমীল ফিল হাদিস
-TITLE:সমাপনী শিক্ষার্থী
-TEL;TYPE=CELL:01930216833
-EMAIL:hasibulhoque3335@gmail.com
-ADR;TYPE=HOME:;;নদ্দাপাড়া;দক্ষিণখান;ঢাকা;;বাংলাদেশ
-URL:https://www.facebook.com/hasibulhoque3335
-NOTE:রক্তের গ্রুপ: O+ | পিতা: মুবিনুল হক
-END:VCARD`;
+        পিতা: মুবিনুল হক  
 
-// QR কোড জেনারেট
-new QRCode(document.getElementById("qrcode"), {
-    text: vCardData,
-    width: 140,
-    height: 140,
-    colorDark: "#0a2f4f",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H
-});
+    </div>  
 
-// vCard ডাউনলোড
-document.getElementById('downloadVCard').addEventListener('click', function() {
-    const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'hasibul_hoque.vcf';
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
-});
-</script>
-</body>
+
+    <div class="student-tag">  
+
+        <i class="fa-solid fa-graduation-cap"></i>  
+
+        সমাপনী শিক্ষার্থী  
+
+    </div>  
+
+
+</section>  
+
+
+<!-- =========================================  
+     INFORMATION  
+========================================== -->  
+
+<section class="info-section">  
+
+
+    <div class="section-title">  
+
+        <span class="section-icon">  
+
+            <i class="fa-solid fa-table-cells"></i>  
+
+        </span>  
+
+        ব্যক্তিগত তথ্য  
+
+    </div>  
+
+
+    <div class="info-grid">  
+
+
+        <div class="info-box">  
+
+            <div class="info-label">  
+
+                গ্রাম  
+
+            </div>  
+
+            <div class="info-value">  
+
+                নদ্দাপাড়া  
+
+            </div>  
+
+        </div>  
+
+
+        <div class="info-box">  
+
+            <div class="info-label">  
+
+                থানা  
+
+            </div>  
+
+            <div class="info-value">  
+
+                দক্ষিণখান  
+
+            </div>  
+
+        </div>  
+
+
+        <div class="info-box">  
+
+            <div class="info-label">  
+
+                জেলা  
+
+            </div>  
+
+            <div class="info-value">  
+
+                ঢাকা  
+
+            </div>  
+
+        </div>  
+
+
+        <div class="info-box blood-box">  
+
+            <div class="info-label">  
+
+                রক্তের গ্রুপ  
+
+            </div>  
+
+            <div class="info-value">  
+
+                <span class="blood">  
+
+                    O+  
+
+                </span>  
+
+            </div>  
+
+        </div>  
+
+
+        <div class="info-box">  
+
+            <div class="info-label">  
+
+                মোবাইল  
+
+            </div>  
+
+            <div class="info-value">  
+
+                01930216833  
+
+            </div>  
+
+        </div>  
+
+
+        <div class="info-box">  
+
+            <div class="info-label">  
+
+                জিমেইল  
+
+            </div>  
+
+            <div class="info-value">  
+
+                hasibulhoque3335@gmail.com  
+
+            </div>  
+
+        </div>  
+
+
+    </div>  
+
+</section>  
+
+
+<!-- =========================================  
+     CONTACT  
+========================================== -->  
+
+<section class="contact">  
+
+
+    <div class="contact-title">  
+
+        যোগাযোগ  
+
+    </div>  
+
+
+    <div class="buttons">  
+
+
+        <!-- CALL -->  
+
+        <a  
+            class="btn call"  
+            href="tel:01930216833"  
+        >  
+
+            <i class="fa-solid fa-phone"></i>  
+
+            কল করুন  
+
+        </a>  
+
+
+        <!-- FACEBOOK -->  
+
+        <a  
+            class="btn facebook"  
+            href="https://www.facebook.com/hasibulhoque3335"  
+            target="_blank"  
+            rel="noopener noreferrer"  
+        >  
+
+            <i class="fa-brands fa-facebook-f"></i>  
+
+            Facebook  
+
+        </a>  
+
+
+        <!-- WHATSAPP -->  
+
+        <a  
+            class="btn whatsapp"  
+            href="https://wa.me/8801930216833"  
+            target="_blank"  
+            rel="noopener noreferrer"  
+        >  
+
+            <i class="fa-brands fa-whatsapp"></i>  
+
+            WhatsApp  
+
+        </a>  
+
+
+        <!-- GMAIL -->  
+
+        <a  
+            class="btn gmail"  
+            href="mailto:hasibulhoque3335@gmail.com"  
+        >  
+
+            <i class="fa-solid fa-envelope"></i>  
+
+            Gmail  
+
+        </a>  
+
+
+        <!-- TELEGRAM -->  
+
+        <a  
+            class="btn telegram"  
+            href="https://t.me/hasibulhoque3335"  
+            target="_blank"  
+            rel="noopener noreferrer"  
+        >  
+
+            <i class="fa-brands fa-telegram"></i>  
+
+            Telegram  
+
+        </a>  
+
+
+        <!-- INSTAGRAM -->  
+
+        <a  
+            class="btn instagram"  
+            href="https://www.instagram.com/hasibulhoque3335?igsi=MWZtYzJic2RmbDcyNg=="  
+            target="_blank"  
+            rel="noopener noreferrer"  
+        >  
+
+            <i class="fa-brands fa-instagram"></i>  
+
+            Instagram  
+
+        </a>  
+
+
+    </div>  
+
+</section>  
+
+
+<!-- =========================================  
+     FOOTER  
+========================================== -->  
+
+<footer class="footer">  
+
+    <strong>  
+
+        ক্রমিক নং ৫০  
+
+    </strong>  
+
+    &nbsp; • &nbsp;  
+
+    ID Card QR Directory  
+
+</footer>
+
+</div>  </body>  
 </html>
