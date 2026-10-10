@@ -1,129 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#092d25">
-  <meta name="description" content="The personal profile of Hasibul Hoque, Executive Editor of Al-Midad Magazine.">
-  <title>Hasibul Hoque | Executive Editor, Al-Midad Magazine</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <style>
-    :root{--green:#092d25;--green-2:#104638;--gold:#c9a85c;--gold-light:#ead9a7;--paper:#fbfaf6;--ink:#17231f;--muted:#718079;--line:#e6e9e3;--white:#fff}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#eef1ec;min-height:100vh;padding:28px 14px;line-height:1.6}
-    a{color:inherit}
-    .portfolio{max-width:760px;margin:0 auto;background:var(--paper);border-radius:28px;overflow:hidden;box-shadow:0 24px 70px rgba(12,39,30,.18);border:1px solid rgba(255,255,255,.8)}
-    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 90% 10%,rgba(201,168,92,.18),transparent 27%),linear-gradient(135deg,#06251d,#0b3a2e 62%,#155340);color:white;padding:34px 36px 38px}
-    .hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(234,217,167,.18);border-radius:50%;pointer-events:none}
-    .hero:before{width:330px;height:330px;right:-165px;top:-210px}
-    .hero:after{width:230px;height:230px;left:-155px;bottom:-175px}
-    .topline{height:1px;background:linear-gradient(90deg,transparent,rgba(234,217,167,.75),transparent);margin-bottom:27px;position:relative;z-index:1}
-    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold-light);font-size:11px;letter-spacing:2.2px;text-transform:uppercase;font-weight:700;position:relative;z-index:1}
-    .eyebrow:before{content:"";width:26px;height:1px;background:var(--gold)}
-    .hero-main{display:grid;grid-template-columns:1fr 176px;align-items:center;gap:24px;position:relative;z-index:1;margin-top:21px}
-    h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,6vw,51px);line-height:1.12;letter-spacing:-.8px;margin-bottom:15px}
-    .role{font-size:14px;color:#e7eee9;line-height:1.7}
-    .role strong{display:block;color:var(--gold-light);font-size:16px;font-weight:600}
-    .magazine{display:inline-flex;align-items:center;gap:8px;margin-top:22px;border:1px solid rgba(234,217,167,.35);background:rgba(255,255,255,.045);padding:9px 13px;border-radius:999px;color:#f1e6c5;font-size:11px;font-weight:600;letter-spacing:.3px}
-    .magazine i{color:var(--gold-light)}
-    .portrait-wrap{width:164px;height:164px;padding:5px;border-radius:50%;background:linear-gradient(140deg,#f0dca0,#b68d37,#f0dca0);box-shadow:0 14px 34px rgba(0,0,0,.28);justify-self:end}
-    .portrait-inner{height:100%;width:100%;padding:4px;border-radius:50%;background:#0a3025}
-    .portrait{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid #fffaf0}
-    .content{padding:30px 36px 28px}
-    .intro{display:grid;grid-template-columns:5px 1fr;gap:16px;margin-bottom:28px}
-    .intro-rule{border-radius:9px;background:linear-gradient(var(--gold),#e8d9ad)}
-    .intro h2,.section-heading{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--green);line-height:1.3}
-    .intro p{font-size:13px;color:#64716a;margin-top:7px;max-width:540px}
-    .section-head{display:flex;align-items:center;gap:11px;margin:0 0 15px}
-    .section-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:#edf3ee;border:1px solid #dce8df;color:#9a7932;font-size:14px;flex:0 0 auto}
-    .section-heading{font-size:20px}
-    .details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-    .detail{min-width:0;min-height:83px;padding:15px 16px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#fff,#f7f8f4)}
-    .label{font-size:10px;text-transform:uppercase;letter-spacing:1.25px;color:#87928b;font-weight:700;margin-bottom:6px}
-    .value{font-size:14px;font-weight:600;color:#24352d;overflow-wrap:anywhere;line-height:1.5}
-    .blood-value{display:inline-flex;align-items:center;justify-content:center;min-width:48px;padding:3px 12px;background:#a72c36;color:white;border-radius:999px;font-size:12px;font-weight:700}
-    .contact-section{margin-top:29px}
-    .contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-    .contact-link{min-height:48px;display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;border-radius:13px;color:#fff;font-size:12px;font-weight:700;padding:10px 12px;transition:transform .18s ease,filter .18s ease;box-shadow:0 5px 13px rgba(20,35,28,.09)}
-    .contact-link:hover{transform:translateY(-2px);filter:brightness(1.04)}
-    .contact-link i{font-size:15px}
-    .call{background:linear-gradient(135deg,#0b3a2e,#126048)}.facebook{background:#1877f2}.whatsapp{background:#18ad5a}.gmail{background:#d94336}.telegram{background:#229ed9}.instagram{background:linear-gradient(115deg,#833ab4,#fd1d1d 55%,#fcb045)}
-    .footer{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;align-items:center;color:#87928b;font-size:10px}
-    .footer-brand{display:flex;align-items:center;gap:8px;color:var(--green);font-weight:700;letter-spacing:.35px}
-    .footer-brand span{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block}
-    @media(max-width:600px){body{padding:12px 8px}.portfolio{border-radius:22px}.hero{padding:25px 22px 30px}.topline{margin-bottom:23px}.hero-main{grid-template-columns:1fr 112px;gap:12px;margin-top:18px}.portrait-wrap{width:108px;height:108px}.eyebrow{font-size:9px;letter-spacing:1.7px}.hero h1{font-size:clamp(29px,7.5vw,39px)}.role{font-size:12px}.role strong{font-size:14px}.magazine{font-size:10px;padding:8px 10px;margin-top:17px}.content{padding:25px 20px 22px}.intro{gap:12px}.intro h2{font-size:20px}.intro p{font-size:12px}.section-heading{font-size:19px}.details{gap:9px}.detail{padding:13px 12px;min-height:78px}.value{font-size:13px}.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.contact-link{font-size:11px}.footer{align-items:flex-start;flex-direction:column;gap:6px}}
-    @media(max-width:350px){.hero{padding-left:17px;padding-right:17px}.hero-main{grid-template-columns:1fr 88px}.portrait-wrap{width:86px;height:86px}.hero h1{font-size:27px}.details{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.magazine{font-size:9px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.contact-link{transition:none}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090809">
+<meta name="description" content="Hasibul Hoque — Writer, Editor and Translator. Executive Editor of Al-Midad Arabic Monthly.">
+<title>Hasibul Hoque | Writer · Editor · Translator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090809;--panel:#121012;--red:#a92135;--red2:#d13a4b;--cream:#f4eee8;--muted:#b8adb0;--line:#3a2027;--gold:#c5a56c}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--bg);color:var(--cream);font-family:"DM Sans","Noto Sans Bengali",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(9,8,9,.91);backdrop-filter:blur(14px);border-bottom:1px solid #2b1b20}
+nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:700;letter-spacing:.14em;font-size:.88rem}.brand span{color:var(--red2)}.navlinks{display:flex;gap:22px;font-size:.83rem;color:#d5cbd0}.navlinks a:hover{color:#fff}.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:8px;padding:7px 11px}
+.hero{position:relative;min-height:600px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px;padding:75px 0 65px;overflow:hidden}.hero:before{content:"";position:absolute;width:580px;height:480px;right:-120px;top:70px;background:radial-gradient(ellipse,rgba(127,18,38,.38),transparent 68%);pointer-events:none}.eyebrow{color:var(--red2);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.hero h1{font:700 clamp(3.4rem,9vw,7.7rem)/.92 "Playfair Display",serif;letter-spacing:-.055em;margin:22px 0 24px;position:relative}.hero h1 span{display:block;color:var(--red);font-weight:500}.role{font-size:clamp(1.25rem,2.5vw,1.9rem);font-weight:700;letter-spacing:.035em;margin:0 0 14px}.intro{max-width:580px;color:#c7bdc0;font-size:1.03rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid var(--red);border-radius:4px;font-weight:600;font-size:.88rem;transition:.2s}.btn.primary{background:var(--red);color:#fff}.btn:hover{transform:translateY(-2px);background:#c12a40}.btn.secondary{border-color:#594048}.portrait{position:relative;justify-self:center;width:min(100%,365px);aspect-ratio:3/4;z-index:1}.portrait:before{content:"";position:absolute;inset:18px -16px -16px 16px;border:1px solid var(--red);z-index:-1}.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(.82);display:block}.portrait-label{position:absolute;left:-26px;bottom:28px;background:var(--red);padding:13px 17px;font-size:.78rem;letter-spacing:.08em;font-weight:700}
+section{padding:76px 0;border-top:1px solid #25171b}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:32px}.kicker{font-size:.72rem;color:var(--red2);letter-spacing:.17em;font-weight:700;text-transform:uppercase}.section-head h2{font:600 clamp(2rem,4vw,3rem)/1.1 "Playfair Display",serif;margin:7px 0 0}.section-head p{max-width:470px;color:var(--muted);font-size:.9rem;margin:0}.about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px;align-items:start}.about-mark{border-left:3px solid var(--red);padding:9px 0 9px 22px}.about-mark .big{font:600 2.3rem "Playfair Display",serif;color:var(--red2)}.about-mark p{margin:5px 0;color:var(--muted);font-size:.9rem}.about-copy{color:#d1c8cb}.about-copy p{margin-top:0}.quote{font:500 1.35rem/1.45 "Playfair Display",serif;color:var(--cream);border-top:1px solid var(--line);padding-top:20px;margin-top:24px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#171316,#0e0c0e);border:1px solid #342027;padding:25px;min-height:220px;transition:.22s}.card:hover{border-color:var(--red);transform:translateY(-4px)}.card .num{color:var(--red2);font:600 1.2rem "Playfair Display",serif}.card h3{font-size:1.08rem;margin:19px 0 9px}.card p{font-size:.88rem;color:var(--muted);margin:0}.tag{display:inline-block;margin-top:18px;color:#e4c7cb;border-bottom:1px solid var(--red);padding-bottom:3px;font-size:.78rem}
+.feature{display:grid;grid-template-columns:.7fr 1.3fr;border:1px solid #3b2229;background:#100d0f}.feature-side{background:linear-gradient(145deg,#641728,#1a0c11);padding:30px;display:flex;flex-direction:column;justify-content:space-between;min-height:270px}.arabic{font:700 2.2rem/1.5 Amiri,serif;direction:rtl}.feature-side small{letter-spacing:.14em;font-size:.7rem}.feature-main{padding:34px}.feature-main h3{font:600 1.9rem "Playfair Display",serif;margin:0 0 12px}.feature-main p{color:var(--muted);margin:0 0 20px}.textlink{color:#f0c6cc;border-bottom:1px solid var(--red);padding-bottom:4px;font-size:.88rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px}.list-panel{border-top:2px solid var(--red);padding-top:20px}.list-panel h3{font-size:1.15rem;margin:0 0 17px}.item{padding:14px 0;border-bottom:1px solid #2b1c21;display:flex;gap:15px}.item:last-child{border-bottom:0}.dot{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:var(--red2);margin-top:9px}.item strong{display:block;font-size:.92rem}.item span{display:block;color:var(--muted);font-size:.84rem}
+.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{border:1px solid #4b2b33;padding:9px 13px;color:#ded2d5;font-size:.84rem;border-radius:2px}
+.contact{background:linear-gradient(110deg,#170d11,#0a090a 68%);border:1px solid #3c2028;padding:clamp(24px,5vw,48px);display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}.contact h2{font:600 clamp(2rem,4vw,3.2rem) "Playfair Display",serif;margin:7px 0 12px}.contact p{color:var(--muted);max-width:600px}.contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.signature{font:italic 2.3rem "Playfair Display",serif;color:var(--red2);transform:rotate(-7deg);padding:20px;border-bottom:1px solid var(--red)}
+footer{padding:25px 0;color:#8f8286;font-size:.76rem}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.bn{font-family:"Noto Sans Bengali",sans-serif}
+@media(max-width:760px){.navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:#100d0f;padding:18px 5%;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.navlinks.open{display:flex}.menu{display:block}.hero{grid-template-columns:1fr;min-height:auto;padding:55px 0 55px}.hero-copy{order:1}.portrait{order:0;width:min(72%,300px);margin:0 auto 25px}.hero h1{font-size:clamp(3.4rem,17vw,6rem)}.portrait-label{left:-15px}.section-head{display:block}.section-head p{margin-top:14px}.about-grid,.feature,.split,.contact{grid-template-columns:1fr;gap:25px}.cards{grid-template-columns:1fr}.card{min-height:auto}.feature-side{min-height:190px}.feature-main{padding:25px}.signature{justify-self:start}.contact{padding:25px}.about-grid{gap:25px}section{padding:55px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
 </head>
 <body>
-  <main class="portfolio">
-    <header class="hero">
-      <div class="topline"></div>
-      <div class="eyebrow">Personal Portfolio</div>
-      <div class="hero-main">
-        <div class="hero-copy">
-          <h1>Hasibul Hoque</h1>
-          <p class="role"><strong>Executive Editor</strong>Al-Midad Magazine</p>
-          <div class="magazine"><i class="fa-solid fa-book-open"></i><span>Arabic Monthly Magazine</span></div>
-        </div>
-        <div class="portrait-wrap">
-          <div class="portrait-inner">
-            <img class="portrait" src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY" alt="Portrait of Hasibul Hoque">
-          </div>
-        </div>
-      </div>
-    </header>
+<header><div class="wrap"><nav>
+<a class="brand" href="#home">HASIBUL <span>HOQUE</span></a>
+<div class="navlinks" id="navlinks"><a href="#about">About</a><a href="#work">Selected Work</a><a href="#almidad">Al-Midad</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+<button class="menu" id="menu" aria-label="Open navigation">Menu ☰</button>
+</nav></div></header>
+<main>
+<div class="wrap">
+<section class="hero" id="home" style="border-top:0">
+<div class="hero-copy">
+<div class="eyebrow">Writer · Editor · Translator</div>
+<h1>PORT<span>FOLIO.</span></h1>
+<p class="role">Words. Ideas. Meaning.</p>
+<p class="intro">I work with Bengali and Arabic writing, translation and editorial projects, with a particular interest in literature, knowledge and the exchange of ideas across languages.</p>
+<div class="actions"><a class="btn primary" href="#work">Explore my work ↘</a><a class="btn secondary" href="#contact">Get in touch</a></div>
+</div>
+<div class="portrait"><img src="https://lh3.googleusercontent.com/d/1i9Ex_eTx7FBJigLIfXMNPriR3GUjYpsY" alt="Hasibul Hoque portrait"><div class="portrait-label">BANGLADESH · 2026</div></div>
+</section>
 
-    <div class="content">
-      <section class="intro" aria-labelledby="about-title">
-        <div class="intro-rule"></div>
-        <div>
-          <h2 id="about-title">About Me</h2>
-          <p>Hasibul Hoque serves as the Executive Editor of <em>Al-Midad</em>, an Arabic monthly magazine. This page brings together his professional role, personal details, and contact links in one place.</p>
-        </div>
-      </section>
+<section id="about">
+<div class="section-head"><div><div class="kicker">A little about me</div><h2>About Me</h2></div><p>A thoughtful practice of writing, editing and translation.</p></div>
+<div class="about-grid">
+<div class="about-mark"><div class="big">01 / 03</div><p>Writer</p><p>Editor</p><p>Translator</p><p>Arabic-language enthusiast</p></div>
+<div class="about-copy">
+<p>I am Hasibul Hoque, a Bangladeshi writer, editor and translator interested in Bengali and Arabic language, literature and publishing. My work brings together writing, editorial practice, translation and independent literary initiatives.</p>
+<p>As Executive Editor of <em>Al-Midad</em>, an Arabic monthly magazine, I contribute to a project that seeks to encourage Arabic learning and literary engagement in Bangladesh. I am also interested in making meaningful writing accessible to readers and building bridges between languages and traditions.</p>
+<p>My ongoing interests include Arabic-to-Bengali and Bengali-to-Arabic translation, Islamic literature, fiction, editorial development and digital platforms for reading and learning.</p>
+<div class="quote">“Writing today, so that knowledge and ideas may leave a lasting trace.”</div>
+</div></div>
+</section>
 
-      <section aria-labelledby="details-title">
-        <div class="section-head">
-          <span class="section-icon"><i class="fa-regular fa-address-card"></i></span>
-          <h2 class="section-heading" id="details-title">Personal Details</h2>
-        </div>
-        <div class="details">
-          <div class="detail"><div class="label">Father's Name</div><div class="value">Mubinul Hoque</div></div>
-          <div class="detail"><div class="label">Village</div><div class="value">Naddapara</div></div>
-          <div class="detail"><div class="label">Police Station</div><div class="value">Dakshinkhan</div></div>
-          <div class="detail"><div class="label">District</div><div class="value">Dhaka</div></div>
-          <div class="detail"><div class="label">Blood Group</div><div class="value"><span class="blood-value">O+</span></div></div>
-          <div class="detail"><div class="label">Mobile</div><div class="value">01930216833</div></div>
-          <div class="detail"><div class="label">Email</div><div class="value">hasibulhoque3335@gmail.com</div></div>
-        </div>
-      </section>
+<section id="work">
+<div class="section-head"><div><div class="kicker">Selected work & interests</div><h2>What I Work On</h2></div><p>A selection of editorial work, literary interests and ongoing projects.</p></div>
+<div class="cards">
+<article class="card"><div class="num">01</div><h3>Writing & Essays</h3><p>Articles and literary writing on language, education, Islamic intellectual heritage and contemporary questions.</p><span class="tag">Writing</span></article>
+<article class="card"><div class="num">02</div><h3>Translation</h3><p>Working across Bengali and Arabic, with a focus on faithful meaning, natural expression and reader-friendly language.</p><span class="tag">Bengali ↔ Arabic</span></article>
+<article class="card"><div class="num">03</div><h3>Editing & Publishing</h3><p>Editorial planning, language refinement, proofreading and the preparation of magazine content for publication.</p><span class="tag">Editorial practice</span></article>
+<article class="card"><div class="num">04</div><h3>Creative Writing</h3><p>Developing fiction and narrative projects that explore moral choices, spiritual growth, suspense and human character.</p><span class="tag">Fiction</span></article>
+<article class="card"><div class="num">05</div><h3>Digital Publishing</h3><p>Exploring reader-focused online spaces for magazine articles, literary resources and Arabic learning.</p><span class="tag">Digital projects</span></article>
+<article class="card"><div class="num">06</div><h3>Research & Heritage</h3><p>An ongoing interest in Islamic history, seerah, scholarly biographies and the transmission of knowledge.</p><span class="tag">Research interests</span></article>
+</div>
+</section>
 
-      <section class="contact-section" aria-labelledby="contact-title">
-        <div class="section-head">
-          <span class="section-icon"><i class="fa-solid fa-paper-plane"></i></span>
-          <h2 class="section-heading" id="contact-title">Get in Touch</h2>
-        </div>
-        <div class="contact-grid">
-          <a class="contact-link call" href="tel:01930216833"><i class="fa-solid fa-phone"></i>Call</a>
-          <a class="contact-link facebook" href="https://www.facebook.com/hasibulhoque3335" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
-          <a class="contact-link whatsapp" href="https://wa.me/8801930216833" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
-          <a class="contact-link gmail" href="mailto:hasibulhoque3335@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
-          <a class="contact-link telegram" href="https://t.me/hasibulhoque3335" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i>Telegram</a>
-          <a class="contact-link instagram" href="https://www.instagram.com/hasibulhoque3335?igsi=MWZtYzJic2RmbDcyNg==" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i>Instagram</a>
-        </div>
-      </section>
+<section id="almidad">
+<div class="section-head"><div><div class="kicker">Editorial role</div><h2>Al-Midad Arabic Monthly</h2></div><p>A platform for Arabic language, literature and learning in Bangladesh.</p></div>
+<div class="feature">
+<div class="feature-side"><div class="arabic" lang="ar">المداد</div><small>ARABIC MONTHLY MAGAZINE</small></div>
+<div class="feature-main"><h3>Executive Editor</h3><p><em>Al-Midad</em> is an Arabic monthly magazine working to connect readers with Arabic language and literature. Its editorial vision welcomes learners at different levels and seeks to make Arabic writing, translation, Islamic heritage and literary culture accessible to a wider Bengali readership.</p><p>My role connects me with editorial coordination and the development of magazine content. The project reflects my wider commitment to Arabic publishing and literary exchange.</p><a class="textlink" href="https://www.facebook.com/almidad2025" target="_blank" rel="noopener noreferrer">Visit Al-Midad on Facebook ↗</a></div>
+</div>
+</section>
 
-      <footer class="footer">
-        <div class="footer-brand"><span></span> HASIBUL HOQUE</div>
-        <div>Executive Editor · Al-Midad Magazine</div>
-      </footer>
-    </div>
-  </main>
+<section id="education">
+<div class="section-head"><div><div class="kicker">Background</div><h2>Education & Skills</h2></div><p>Current study and areas of practice.</p></div>
+<div class="split">
+<div class="list-panel"><h3>Education</h3>
+<div class="item"><div class="dot"></div><div><strong>Takmil fil Hadith</strong><span>Academic year 1447–48 AH / 2026–2027</span><span>Al-I‘tisam student diary context; institution details can be added when confirmed.</span></div></div>
+<div class="item"><div class="dot"></div><div><strong>Arabic language and literature</strong><span>Ongoing learning, reading and editorial practice.</span></div></div>
+</div>
+<div class="list-panel"><h3>Areas of Practice</h3><div class="skills">
+<span class="skill">Writing</span><span class="skill">Editing</span><span class="skill">Translation</span><span class="skill">Proofreading</span><span class="skill">Arabic Literature</span><span class="skill">Editorial Planning</span><span class="skill">Research</span><span class="skill">Digital Publishing</span>
+</div><p style="color:var(--muted);font-size:.82rem;margin-top:18px">Skills are presented as areas of practice, not formal certifications.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="contact"><div><div class="kicker">Start a conversation</div><h2>Let’s work together.</h2><p>For editorial collaborations, writing, translation, publishing projects or professional correspondence, feel free to get in touch.</p><div class="contact-links"><a class="btn primary" href="mailto:hasibulhoque3335@gmail.com">Email me ↗</a><a class="btn secondary" href="https://www.facebook.com/almidad2025" target="_blank" rel="noopener noreferrer">Al-Midad Facebook ↗</a></div></div><div class="signature">Hasibul<br>Hoque</div></div>
+</section>
+</div>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 Hasibul Hoque. Personal portfolio.</span><span>Writer · Editor · Translator</span></div></footer>
+<script>
+const menu=document.getElementById('menu'),links=document.getElementById('navlinks');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script>
 </body>
 </html>
