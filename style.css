@@ -1,0 +1,42 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Hind Siliguri', sans-serif; background: #eef1f4; min-height: 100vh; display: flex; justify-content: center; }
+#app { width: 100%; max-width: 420px; }
+.loading { text-align: center; padding: 80px 20px; color: #7a7a7a; }
+.card { width: 100%; min-height: 100vh; background: #eef1f4; overflow: hidden; }
+.top { position: relative; background:
+  radial-gradient(circle at 20% 20%, rgba(212,175,55,.15) 0%, transparent 40%),
+  radial-gradient(circle at 80% 70%, rgba(27,107,82,.25) 0%, transparent 45%),
+  linear-gradient(160deg, #0a1f18 0%, #0c2c22 55%, #0a1f18 100%);
+  padding: 34px 20px 36px; text-align: center; overflow: hidden; }
+.top::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 16px 16px; opacity: .5; }
+.photo-ring { position: relative; width: 118px; height: 118px; margin: 0 auto 16px; border-radius: 50%; padding: 3px; background: linear-gradient(135deg, #d4af37, #f4e08a); box-shadow: 0 0 0 6px rgba(212,175,55,.12); }
+.photo { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; display: block; background: #fffdf6; border: 3px solid #0c2c22; }
+.badge { position: relative; color: #d4af37; font-size: 11px; font-weight: 600; letter-spacing: 1px; margin-bottom: 6px; }
+.name { position: relative; font-family: 'Baloo Da 2', sans-serif; font-size: 25px; font-weight: 700; color: #fff; margin: 0 0 4px; }
+.father { position: relative; font-size: 13px; color: #b9cbc3; margin: 0 0 16px; }
+.icon-row { position: relative; display: flex; justify-content: center; gap: 14px; margin-top: 14px; }
+.icon-btn { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; text-decoration: none; }
+.icon-btn svg { width: 22px; height: 22px; }
+.icon-btn.wa { background: rgba(37,211,102,.18); border-color: rgba(37,211,102,.4); }
+.icon-btn.fb { background: rgba(24,119,242,.18); border-color: rgba(24,119,242,.4); }
+.icon-btn.mail { background: rgba(212,175,55,.18); border-color: rgba(212,175,55,.4); }
+.icon-btn.disabled { opacity: .3; pointer-events: none; }
+.sheet { background: #fffdf6; margin: -18px 14px 0; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,.08); position: relative; padding: 6px 6px 4px; }
+.item { display: flex; align-items: center; gap: 14px; padding: 14px 12px; border-bottom: 1px solid #f0ece0; text-decoration: none; }
+.item:last-child { border-bottom: none; }
+.item-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 12px; background: #0c2c22; display: flex; align-items: center; justify-content: center; }
+.item-icon svg { width: 18px; height: 18px; }
+.item-text { flex: 1; min-width: 0; }
+.item-label { font-size: 12px; color: #9a9a9a; display: block; margin-bottom: 2px; }
+.item-value { font-size: 15.5px; color: #1a1a1a; font-weight: 600; word-break: break-word; }
+.item-value.pending { color: #b8a36a; font-weight: 500; font-style: italic; }
+.chevron { color: #ccc; font-size: 22px; }
+.blood-pill { display: inline-block; background: linear-gradient(135deg, #c0392b, #922b21); color: #fff; font-weight: 700; padding: 3px 14px; border-radius: 20px; font-size: 13px; }
+.footer { text-align: center; font-size: 11px; color: #a3a3a3; padding: 18px 20px 30px; line-height: 1.6; }
+/* index */
+.idx { padding: 22px 16px 40px; }
+.idx h1 { font-size: 15px; text-align: center; color: #0c2c22; line-height: 1.6; margin: 0 0 14px; }
+.idx input { width: 100%; padding: 12px 14px; border: 1px solid #d6dbe0; border-radius: 12px; font: inherit; margin-bottom: 12px; }
+.idx ul { list-style: none; margin: 0; padding: 0; }
+.idx li a { display: flex; align-items: center; gap: 12px; background: #fffdf6; margin-bottom: 8px; padding: 12px 14px; border-radius: 12px; color: #1a1a1a; text-decoration: none; font-weight: 500; }
+.idx .no { background: #0c2c22; color: #d4af37; border-radius: 8px; padding: 2px 8px; font-size: 12px; font-weight: 700; }
