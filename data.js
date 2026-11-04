@@ -696,7 +696,7 @@ window.FALLBACK_DATA = [
   "blood": "O+",
   "phone": "01930216833",
   "whatsapp": "01930216833",
-  " Instagram": "https://www.instagram.com/hasibulhoque3335?mdxt=MWZtYzJic2RmbDcyNg=="
+  " Instagram": "https://www.instagram.com/hasibulhoque3335?mdxt=MWZtYzJic2RmbDcyNg==",
   "gmail": "hasibulhoque3335@gmail.com",
   "facebook": "https://www.facebook.com/hasibulhoque3335",
   "photo": ""
