@@ -699,6 +699,9 @@ window.FALLBACK_DATA = [
   " Instagram": "https://www.instagram.com/hasibulhoque3335?mdxt=MWZtYzJic2RmbDcyNg==",
   "gmail": "hasibulhoque3335@gmail.com",
   "facebook": "https://www.facebook.com/hasibulhoque3335",
+"X": "https://x.com/hoque_hasi75862",
+  "Instagram": "https://www.instagram.com/hasibulhoque3335?mdxt=MWZtYzJic2RmbDcyNg==",
+  "telegram": "01930216833",
   "photo": ""
  },
  {
